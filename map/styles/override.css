@@ -1,0 +1,134 @@
+/*
+===============================================================================
+Document variables
+===============================================================================
+*/
+/* This is an attempt at replacing the original RestEAUr'Lag colors with variables. */
+/* Please note that it's still a work in progress */
+:root {
+  /* Interface main colors */
+  --main-color: #32A329; /* Replaces original #29959B blue */
+  --main-color-hover: #20691A; /* Replaces original #217C81 blue */
+  --black: #0B170B; /* Replaces original #262236 black */
+  --black90: rgba(11,23,11,0.9); /* Replaces original rgba(38,34,54,0.9) black */
+
+  /* Map buttons main colors */
+  --map-control:  rgba(50, 163, 41, 0.5); /* Replaces default OpenLayers rgba(41, 149, 155, 0.5) blue */
+  --map-control-hover: rgba(50, 163, 41, 0.8); /* Replaces default OpenLayers rgba(41, 149, 155, 0.8) blue */
+}
+
+/*
+===============================================================================
+Overriding JQuery-UI styles
+===============================================================================
+*/
+.ui-slider {
+  margin: 6px 8px;
+  height: 8px !important;
+  border: none !important;
+  background-color: #AFAEB4;
+}
+
+.ui-slider .ui-slider-handle {
+  background-color: var(--main-color) !important;
+  border-color: #EEEEF1 !important;
+  border-radius: 50% !important;
+}
+
+.ui-slider .ui-slider-handle:focus {
+  background-color: var(--main-color) !important;
+  border-color: #EEEEF1 !important;
+}
+
+.ui-slider .ui-slider-range {
+  border: none !important;
+  background-color: var(--main-color);
+}
+
+.ui-widget-overlay {
+  opacity: 0.5;
+  filter: Alpha(Opacity=50);
+  background-color: black;
+}
+
+#table-of-contents-list .ui-state-disabled,
+#chapter-box .ui-state-disabled,
+#collections-box .ui-state-disabled,
+#themes-box .ui-state-disabled {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/*
+===============================================================================
+Overriding OpenLayers styles
+===============================================================================
+*/
+
+/* Override OpenLayers attribution text*/
+.ol-attribution {
+  color: var(--main-color) !important;
+  font-size: 10px !important;
+}
+
+/* Move controls to right */
+.ol-zoom {
+  left: unset;
+  right: 8px;
+  border-radius: 0;
+}
+
+.ol-zoom > .ol-zoom-in {
+  border-radius: 0;
+}
+
+.ol-zoom > .ol-zoom-out {
+  border-radius: 0;
+}
+
+.ol-control > button {
+  border-radius: 0;
+}
+
+.ol-scale-line {
+  left: unset;
+  right: 8px;
+  margin-bottom: 12px;
+  border-radius: 0;
+}
+
+/* Style controls */
+.ol-control > button {
+  background-color: var(--map-control);
+}
+
+.ol-control > button:hover {
+  background-color: var(--map-control-hover);
+}
+
+.ol-control > button:focus {
+  background-color: var(--map-control-hover);
+}
+
+.ol-scale-line {
+  background-color: var(--map-control);
+}
+
+/*
+===============================================================================
+Overriding OpenLayers Extensions styles
+===============================================================================
+*/
+.ol-storymap .ol-scroll-top, .ol-storymap .ol-scroll-next {
+  color: var(--map-control) !important;
+}
+
+.ol-storymap ul, .ol-storymap ol {
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-position: outside;
+}
+
+.ol-storymap ul {
+  list-style-type: disc;
+}

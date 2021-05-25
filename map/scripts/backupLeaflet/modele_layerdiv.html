@@ -1,0 +1,98 @@
+<!-- "Couches" divs -->
+<div id=[NAME]>
+  <!-- Layer name -->
+  <div class="layer-name">
+    <a href="#" class="layer-toggle">
+      <svg class="layer-arrow deployedArrow"><use xlink:href="#iconeArrow" /></use></svg>
+      <input type="checkbox" id="[NAME]-checkbox" name="[NAME]-checkbox" value="display" />
+      <!-- Attention, on affiche "checked" si la couche est visible par défaut ! -->
+      <label for="[NAME]-checkbox">[TITLE]</label>
+    </a>
+    <!-- Info button -->
+    <a id="[NAME]-info" href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
+  </div>
+  <!-- Widgets -->
+  <div class="layer-widgets">
+    <!-- Opacity -->
+    <div id="[NAME]-opacity" class="widget-opacity">
+      <label for="">Opacité : <span></span></label>
+      <input type="text" class="range min-0 max-100" value="100"/>
+      <!-- Donner à value la valeur d'opacité définie dans les options de la couche
+      au moment de générer le html -->
+    </div>
+    <!-- Legend -->
+    <div id="[NAME]-legend" class="widget-legend">
+      <p>Légende :</p>
+      <div class="legend"><img id="[NAME]-img" /></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Floating legend div -->
+<div class="legend-float"><p>[TITLE]</p><img id="[NAME]-float" /></div>
+
+
+<!-- Thématique dev div -->
+<!-- Thématique : Test /!\ DEV PURPOSE ONLY -->
+<div id="Test" class="tab-box">
+  <div class="box-title">
+
+    <!-- Thematic category title -->
+    <div class="thematique-title">
+      <a href="#" class="thematique-toggle">
+        <svg class="theme-arrow deployedArrow"><use xlink:href="#iconeArrow" /></use></svg>
+        <p>Test</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Layers contained in this category (filled with loadLayers.js) -->
+  <div id="Test-layers" class="thematique-layers">
+    <!-- "Couches" divs -->
+    <div id="pop_ancienne_occitanie">
+      <!-- Layer name -->
+      <div class="layer-name">
+        <a href="#" class="layer-toggle">
+          <svg class="layer-arrow deployedArrow"><use xlink:href="#iconeArrow" /></use></svg>
+          <input type="checkbox" id="pop_ancienne_occitanie-checkbox" name="pop_ancienne_occitanie-checkbox" value="display" />
+          <!-- Attention, on affiche "checked" si la couche est visible par défaut ! -->
+          <label for="pop_ancienne_occitanie-checkbox">Population ancienne</label>
+        </a>
+        <!-- Info button -->
+        <a id="pop_ancienne_occitanie-info" href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
+      </div>
+      <!-- Widgets -->
+      <div class="layer-widgets">
+        <!-- Opacity -->
+        <div id="pop_ancienne_occitanie-opacity" class="widget-opacity">
+          <label for="">Opacité : <span></span></label>
+          <input type="text" class="range min-0 max-100" value="100"/>
+          <!-- Donner à value la valeur d'opacité définie dans les options de la couche
+          au moment de générer le html -->
+        </div>
+        <!-- Select date -->
+        <div id="pop_ancienne_occitanie-select-date" class="widget-select-date">
+          <label for="pop_ancienne_occitanie-select-date-choice">Date :</label>
+          <select id="pop_ancienne_occitanie-select-date-choice" name="pop_ancienne_occitanie-select-date-choice">
+            <option value="1793" selected >1793</option>
+            <option value="1800">1800</option>
+            <option value="1800">1851</option>
+            <option value="1800">1901</option>
+            <option value="1800">1954</option>
+            <option value="1800">1999</option>
+            <option value="1800">2016</option>
+          </select>
+        </div>
+        <!-- Custom Legend -->
+        <div id="pop_ancienne_occitanie-customlegend" class="widget-customlegend">
+          <p>Légende :</p>
+          <div id="pop_ancienne_occitanie-customlegendbox" class="customlegend">
+            <p>Population par commune en</p>
+            <img id="pop_ancienne_occitanie-customimg" src="images/assets/legends/pop_ancienne_occitanie_customlegend.png"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

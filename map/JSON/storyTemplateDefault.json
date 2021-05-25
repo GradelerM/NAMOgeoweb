@@ -1,0 +1,114 @@
+{"books": [
+	{
+		"id": "defaultTemplate",
+		"title": "Titre par défaut",
+		"collections": [],
+		"abstract": "Template d&#039une carte narrative par défaut",
+		"authors": [
+			{
+				"name": "First Author",
+				"contact": "first.author@mail.com"
+			}],
+		"date": "",
+		"content": 
+			{ 
+				"introduction": {
+					"content": "Je suis une introduction",
+					"map": {
+						"center": {
+							"x": -61.4204,
+							"y": 16.1876
+						},
+						"zoom": 10, 
+						"basemap": {
+							"id": "planOSM",
+							"title": "planOSM"
+						},
+						"layers": []
+						}
+				},		
+				"chapters": [			
+					{
+						"title": "Thematique",
+						"paragraphs": [
+							{
+								"type": "textHtml",						
+								"content": "<h1>Hello</h1><p>Je suis du texte !</p>",
+								"url": ""
+							},
+							{
+								"type": "textMarkdown",
+								"content": "<p>Click me</p>",
+								"url": ""
+							},
+							{
+								"type": "localPicture",
+								"content": "Légende image locale",
+								"url": ""
+							},
+							{
+								"type": "remotePicture",
+								"content": "Légende image distante",
+								"url": ""
+							}],
+						"map": {
+							"center": {
+								"x": -61.4204,
+								"y": 16.1876
+							},
+							"zoom": 8,
+							"basemap": {
+								"id": "planOSM",
+								"title": "planOSM"
+							},
+							"layers": [
+								{
+									"id": "bd_topo_communes",
+									"title": "BD Topo : communes"
+								}
+							]
+						}
+					},
+					{
+						"title": "Autre thématique",
+						"paragraphs": [{
+							"type": "textHtml",
+							"content": "<h1>Hello</h1><p>Je suis du texte pour le chapitre 2.</p>",
+							"url": ""
+						}],
+						"map":
+							{
+							"center": {
+								"x": -61.0,
+								"y": 16.1876
+							},
+							"zoom": 8,
+							"basemap": {
+								"id": "planOSM",
+								"title": "planOSM"
+							},
+							"layers": []
+							}
+					},
+					{				
+						"title": "Encore une thématique",
+						"paragraphs": [],
+						"map": {
+							"center": {
+								"x": -61.4204,
+								"y": 16.1876
+							},
+							"zoom": 10,
+							"basemap": {
+								"id": "planOSM",
+								"title": "planOSM"
+							},
+							"layers": []
+						}
+					}				
+				]
+			}
+		}
+		]
+	}
+

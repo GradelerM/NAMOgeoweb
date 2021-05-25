@@ -1,0 +1,10 @@
+# Exclude config file
+./map/config.php
+/map/config.php
+
+# Exclude uplads from users
+./map/uploads/**
+/map/uploads/**
+
+# Include an empty file so the folder "uploads" still shows up
+!uploads/.gitkeep
