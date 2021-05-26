@@ -3,14 +3,10 @@
 
     header("Location: map.php");
     header("Content-Type: application/json ; charset=utf-8");
-    header("Cache-Control: no-cache , private");//anti Cache pour HTTP/1.1
-    header("Pragma: no-cache");//anti Cache pour HTTP/1.0
+    header("Cache-Control: no-cache , private");//anti Cache for HTTP/1.1
+    header("Pragma: no-cache");//anti Cache for HTTP/1.0
 
     if (!isset($_SESSION['user'])) { exit; }
-
-    // cette page logout.php supprime la variable de session $_SESSION['user'] et retourne "success" = true si:
-    //      a) l'utilisateur est déjà identifié
-    //      b) l'utilisateur fait une requete en POST ou GET avec cette URI: https://rivage-guadeloupe.teledetection.fr/logout.php
 
     $response=array();
     $response["success"] = false;	

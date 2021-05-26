@@ -1,25 +1,17 @@
 <?php
 session_start();
 
-// Pour accéder à cette page /api.php l'utilisateur doit être déjà authentifié (sinon, il dépassera pas le test if (!isset($_SESSION['user']))
-// Cette page renvoie un flux json avec au minimum l'attribut success (true/false).
-// Les endpoint accessibles (ATTENTION: requete ajax avec le type/methode ="POST" obligatoirement) sont:
-//   -> /api.php?mode=books ou /api.php?mode=books&by_user=true: retrourne en json la liste de tous les livres // todo: gérer + tard les droits update des livres
-//              (si by_user=true est précisé à true, ne retourne que la liste des livres dont l'utilisateur actuel en est l'un des auteurs)
-//   -> /api.php?mode=book&id=[id_livre]: retrourne en json le livre dont l'id est [id_livre]  //TODO: à développer
-//   -> /api.php?mode=update_book&book=[book_content]:  met à jour le livre dont les données sont transmises dans [book_content] au format json
-
 include_once 'config.php';
 
 header("Content-Type: text/plain ; charset=utf-8");
-header("Cache-Control: no-cache , private");//anti Cache pour HTTP/1.1
-header("Pragma: no-cache");//anti Cache pour HTTP/1.0
+header("Cache-Control: no-cache , private");//anti Cache for HTTP/1.1
+header("Pragma: no-cache");//anti Cache for HTTP/1.0
 
-// $response sera le tableau que l'ont transformera en json à la fin du traitement
+// $response is the array we turn to json at the end
 $response = array();
 $response["success"] = false;
 
-// si l'utilisateur n'est pas authentifié, on arrête le traitement et on retourne success = false + une erreur dans error
+// If the user is not authenticated, kill
 if (!isset($_SESSION['user'])) {
     $response["error"] = "User not authenticated";
     pg_close($dbconn); 
@@ -27,17 +19,7 @@ if (!isset($_SESSION['user'])) {
     exit; 
 }
 
-// proposition de structure de la table "books"
-//      id -> integer autoincrement
-//      title -> string
-//      collection  -> string
-//      abstract  -> string
-//      authors -> string
-//      date -> datetime
-//      content -> string
-// nb: Plus tard, faudra éclater cette table books dans un ensemble de table (pour éviter les redondances)
-
-// Conenxion à la base de données
+// Connecting to database
 $conn_string = "host=".$_SESSION['db_host']." port=".$_SESSION['db_port']." dbname=".$_SESSION['db_name']." user=".$_SESSION['db_user']." password=".$_SESSION['db_password'];
 $dbconn = pg_connect($conn_string);
 if (!$dbconn) {
@@ -438,7 +420,7 @@ if (isset($_POST["mode"]) and isset($_POST["book_id"]) and $_POST["mode"] == 'de
 elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_title') and isset($_POST["content"])) {
 
     // Encode the book's title
-    $title = htmlspecialchars($_POST["content"]);
+    $title = pg_escape_string(htmlspecialchars($_POST["content"]));
     
     // Update the book's title in the database
     $sql = "UPDATE userdata.books SET title='".$title."' WHERE id=".$_SESSION["book_id"]." RETURNING *";
@@ -460,7 +442,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_abstract') and isset(
     $response["content"] = $_POST["content"];
 
     // Encode the book's abstract
-    $abstract = htmlspecialchars($_POST["content"]);
+    $abstract = pg_escape_string(htmlspecialchars($_POST["content"]));
 
     // Update the book's title in the database
     $sql = "UPDATE userdata.books SET abstract='".$abstract."' WHERE id=".$_SESSION["book_id"]." RETURNING *";
@@ -480,7 +462,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_abstract') and isset(
 elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_legal_notice') and isset($_POST["content"])) {
 
     // Encoding the book's legal notice
-    $legal_notice = htmlspecialchars($_POST["content"]);
+    $legal_notice = pg_escape_string(htmlspecialchars($_POST["content"]));
     
     // Update the book's title in the database
     $sql = "UPDATE userdata.books SET legal_notice='".$legal_notice."' WHERE id=".$_SESSION["book_id"]." RETURNING *";
@@ -802,7 +784,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_chapter_title') and i
     $response["chapter_id"] = $_POST["chapter_id"];
     $response["content"] = $_POST["content"];
 
-    $title = htmlspecialchars($_POST["content"]);
+    $title = pg_escape_string(htmlspecialchars($_POST["content"]));
 
     // Update the chapter's title in the database
     $sql = "UPDATE userdata.chapters SET title='".$title."' WHERE book_id=".$_SESSION["book_id"]."AND id=".$_POST["chapter_id"]." RETURNING *";
@@ -823,7 +805,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_paragraph_content')
         and isset($_POST["destination"]) and isset($_POST["content"])) {
 
     // Escape the html characters
-    $content = htmlspecialchars($_POST["content"]);
+    $content = pg_escape_string(htmlspecialchars($_POST["content"]));
 
     // Check if it's part of the introduction or not
     if ($_POST["chapter_id"] == 'story-intro') {
@@ -1102,6 +1084,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'get_chapter_map') and isse
     }
 
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Save the chapter's map
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1117,8 +1100,8 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_chapter_map') and iss
     }
 
     // Escape the strings
-    $basemap = htmlspecialchars($_POST["basemap"]);
-    $layers = htmlspecialchars($_POST["layers"]);
+    $basemap = pg_escape_string(htmlspecialchars($_POST["basemap"]));
+    $layers = pg_escape_string(htmlspecialchars($_POST["layers"]));
 
     // Update the chapter's title in the database
     $sql =  "UPDATE userdata.chapters"
@@ -1676,7 +1659,6 @@ elseif (isset($_POST["mode"]) and $_POST["mode"] == 'published_stories') {
 }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Api called with no mode or mode unknown
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1686,14 +1668,13 @@ else {
 }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// FINALISATION du SCRIPT : fermeture de la conenxion avec la BDD et encodage en json du résultat du traitement
+// SCRIPT END: close database and encore $response to json
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// fermeture de la liaison avec la base de données
+// closing the database
 pg_close($dbconn); 
 
-// quel que soit le traitement réalisé (ou non), on retourne $response que l'on encode en json auparavant
+// encode as json and return $response
 echo json_encode($response) ;
 ?>

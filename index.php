@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
-        <meta="description" content="Page d'accueil du projet de carte narrative Rivage">
+        <meta="description" content="Page d'accueil NAMO">
         <meta="author" content="Marie Gradeler (2020)">
         <title>Projet Rivage</title>
 

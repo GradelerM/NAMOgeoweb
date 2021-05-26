@@ -38,7 +38,7 @@ if (!$dbconn) {
 }
 
 // Define a "noreply" adress to send the mails from
-$email_noreply = "noreply@teledetection.fr";
+$email_noreply = "noreply@teledetection.fr"; // NOREPLY MAIL
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // If the user is an administrator, allow him to load a list of all users from the database
@@ -143,7 +143,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE';
+        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
         $message = 'Un administrateur a activé votre compte. Vous pouvez désormais utiliser la plateforme NAMO Geoweb - Projet Rivage accessible à cette adresse : https://rivage-guadeloupe.teledetection.fr/';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -184,7 +184,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE';
+        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
         $message = 'Votre demande de création d\'un compte pour accéder aux outils participatifs de la plateforme NAMO Geoweb - Projet RIVAGE a été refusée par un administrateur de la plateforme.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -225,7 +225,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE';
+        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
         $message = 'Votre compte sur la plateforme NAMO Geoweb - Projet RIVAGE a été temporairement suspendu par un administrateur.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -266,7 +266,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Rôle NAMO Geoweb - Projet RIVAGE';
+        $subject = 'Rôle NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
         $message = 'Un administrateur a édité votre rôle sur la plateforme NAMO Geoweb - Projet RIVAGE. Vous êtes désormais ' + $_POST["role"] + '.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -495,8 +495,8 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'fetch_capabilities') and i
 elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'add_new_server')
         and isset($_POST["url"]) and isset($_POST["type"]) and isset($_POST["name"])) {
 
-    $name = htmlspecialchars($_POST["name"]);
-    $url = htmlspecialchars($_POST["url"]);
+    $name = pg_escape_string(htmlspecialchars($_POST["name"]));
+    $url = pg_escape_string(htmlspecialchars($_POST["url"]));
 
     // Send query to create the new server source
     $sql = "INSERT INTO geodata.servers(name, url, type) VALUES ("
@@ -521,8 +521,8 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'add_new_server')
 elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'update_server') and isset($_POST["id"])
         and isset($_POST["url"]) and isset($_POST["type"]) and isset($_POST["name"])) {
 
-    $name = htmlspecialchars($_POST["name"]);
-    $url = htmlspecialchars($_POST["url"]);
+    $name = pg_escape_string(htmlspecialchars($_POST["name"]));
+    $url = pg_escape_string(htmlspecialchars($_POST["url"]));
 
     // Send query to create the new server source
     $sql = "UPDATE geodata.servers SET "
@@ -611,8 +611,8 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_new_layer')
         and isset($_POST["source_id"]) and isset($_POST["name"]) and isset($_POST["title"]) 
         and isset($_POST["theme"]) and isset($_POST["opacity"]) and isset($_POST["zIndex"])) {
 
-    $name = htmlspecialchars($_POST["name"]);
-    $title = htmlspecialchars($_POST["title"]);
+    $name = pg_escape_string(htmlspecialchars($_POST["name"]));
+    $title = pg_escape_string(htmlspecialchars($_POST["title"]));
 
     // Send query to create the new layer
     $sql = "INSERT INTO geodata.layers(server, name, title, theme, opacity, \"zIndex\") VALUES ("
@@ -741,7 +741,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'update_layer_infos')
         and isset($_POST["layer_id"]) and isset($_POST["title"]) 
         and isset($_POST["theme"]) and isset($_POST["opacity"]) and isset($_POST["zIndex"])) {
 
-    $title = htmlspecialchars($_POST["title"]);
+    $title = pg_escape_string(htmlspecialchars($_POST["title"]));
 
     // Send query to create the new server source
     $sql = "UPDATE geodata.layers SET "

@@ -1,12 +1,12 @@
 <?php
 session_start() ;
 
-include_once 'config.php';  // charge les différentes variables nécessaires pour les scripts php
+include_once 'config.php';  // Loading the needed php config
 include_once './components/loaders.php'; // Including some loaders and other elements to display
 
 header("Content-Type: text/html ; charset=utf-8");
-header("Cache-Control: no-cache , private");//anti Cache pour HTTP/1.1
-header("Pragma: no-cache");//anti Cache pour HTTP/1.0
+header("Cache-Control: no-cache , private"); //anti Cache for HTTP/1.1
+header("Pragma: no-cache"); //anti Cache for HTTP/1.0
 
 // Displaying username
 $username = "";
@@ -58,9 +58,9 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta="description" content="Page principale du projet Rivage">
-  <meta="author" content="Marie Gradeler (2020) à partir des travaux de Vincent Delbar (2019)">
-  <title>Projet Rivage</title>
+  <meta="description" content="NAMO map">
+  <meta="author" content="Marie Gradeler (2020)">
+  <title>NAMO GeoWeb - map</title>
 
   <!-- Leaflet (scripts) -->
   <script src="scripts/lib/leaflet/leaflet.js"></script>
@@ -183,12 +183,14 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
 
     <!-- Hide the screen while the app is loading -->
     <div id="loadingscreen" class="loading-screen">
+      <!-- HORIZONTAL LOGO -->
       <img src="images/assets/logos/logoHorizontal.png" width="200" title="logo" alt="logo" />
       <div class="loader"></div>
     </div>
 
     <!-- Tools navigation bar (left) -->
     <div class="navbar notOnMobile">
+      <!-- VERTICAL LOGO -->
       <a href="#" id="logo" class="notOnMobile accueil-link"><img src="images/assets/logos/logoVertical.png" width="56" title="logo" alt="logo" /></a>
       <ul class="hide-scrollbar notOnMobile">
 
@@ -292,8 +294,8 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
             Retournez sur la page d'accueil vous fera quitter la carte. Pour ne pas perdre l'état de 
             votre session de consultation, vous pouvez ouvrir la page d'accueil dans un nouvel onglet.
           </p>
-          <button class="mainButton orangebtn" onclick="window.location.href='/';">Je veux quitter</button>
-          <button class="mainButton bluebtn" onclick="window.open('/', '_blank');">Nouvel onglet</button>
+          <button class="mainButton orangebtn" onclick="window.location.href='/index.php';">Je veux quitter</button>
+          <button class="mainButton bluebtn" onclick="window.open('/index.php', '_blank');">Nouvel onglet</button>
           <button class="mainButton classic stop-modal">Annuler</button>
         </div>
       </div>
@@ -304,301 +306,8 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <!-- Content -->
         <div class="modal-content">
           <span class="close-modal">&times;</span>
-          <h4>Bienvenue dans l'atlas interactif du <img src="images/assets/logos/logoHorizontal.png" height="60px" title="logo" alt="logo" /></h4>
-          <div class="modal-columns">
-            <div class="left-column">
-
-              <!-- Présentation du projet -->
-              <h5>Le projet Rivage ?</h5>
-              <p><b>Innover en agroécologie pour gérer, préserver et restaurer la qualié environnementale du territoire (2014-2020)</b></p>
-              <p><b>Soutien</b></p>
-              <p>
-                Le projet RIVAGE est un projet financé par des fonds européens Feder et la Région Guadeloupe 
-                en partenariat avec le BRGM, le Cirad, l'INRAE et l'Université des Antilles.
-              </p>
-              <p><b>Partenaires scientifiques</b></p>
-              <p>
-                <ul>
-                  <li>BRGM</li>
-                  <li>Cirad</li>
-                  <li>INRAE</li>
-                  <li>Université des Antilles, Guadeloupe</li>
-                </ul>
-              </p>
-              <p><b>Présentation</b></p>
-              <p>
-                Le projet RIVAGE, coordonné par le Cirad, propose de mettre en place un dispositif sociotechnique 
-                d'accompagnement de la transition écologique de l'agriculture guadeloupéenne. Ce dispositif vise à 
-                accompagner les agriculteurs d'un territoire dans l'adoption de pratiques agro-écologiques, et à faciliter 
-                l'intervention des acteurs locaux dans la gestion de l'environnement. Il s'agira de mieux connaître l'activité 
-                agricole et ses déterminants à l'échelle individuelle et à celle du territoire ; d'apporter des connaissances sur le 
-                fonctionnement du milieu physique et d'établir un diagnostic de l'impact des pratiques sur les différents 
-                compartiments sols, nappes et rivières à l'échelle du bassin versant.
-              </p>
-              <p>Les objectifs sont :</p>
-              <ul>
-                <li>
-                  <b>Créer une structure d'observatoire</b> mutualisée associant chercheurs et acteurs de la société civile en 
-                  amont du processus de recherche pour identifier de façon partagée les actions prioritaires à 
-                  entreprendre et débattre de la question environnementale,
-                </li>
-                <li>
-                  <b>Proposer</b> des modes de gestion ciblés et adaptés comme les innovations culturales et leurs conditions 
-                  d'adoption,
-                </li>
-                <li>
-                  <b>Communiquer et diffuser</b> les informations liées aux pollutions agricoles auprès des producteurs, des 
-                  gestionnaires du territoire et des citoyens de manière innovante (par l'utilisation d'objets intermédiaires, 
-                  des dispositifs participatifs et des applications mobiles grand public connectés à l'observatoire 
-                  mutualisé),
-                </li>
-                <li>
-                  <b>Produire des connaissances</b> sur les processus de contamination du milieu, sols, eaux, et de leur 
-                  complexité en liaison avec la variabilité des pratiques agricoles dans les conditions antillaises.
-                </li>
-              </ul>
-              <p>La deuxième phase du projet (2018-2020) a été structurée autour de 3 ateliers :</p>
-              <ul>
-                <li>
-                  <b>Atelier Agronomie :</b> Cet atelier a comme objectif de mieux connaître l'activité agricole et ses 
-                  déterminants (quelles sont les raisons des pratiques et qu'est-ce qui détermine leur évolution) à l'échelle 
-                  individuelle et à celle du territoire. Pour cela des activités scientifiques et techniques sont engagées :
-                  <ul>
-                    <li>
-                      une cartographie des systèmes culturaux sur la zone d'étude et une description de ces systèmes ;
-                    </li>
-                    <li>
-                      l'identification des indicateurs de pression agricole ;
-                    </li>
-                    <li>
-                      la mise au point de méthodes de suivi pour l'actualisation des données agricoles et 
-                      environnementales en temps réel sur le territoire ;
-                    </li>
-                    <li>
-                      un diagnostic des facteurs déterminant la présence de molécules dans le milieu ;
-                    </li>
-                    <li>
-                      l'élaboration de modèles de décision pour des techniques d'intérêt (gestion de l'enherbement en 
-                      parcelle par exemple) ;
-                    </li>
-                    <li>
-                      l'identification des freins et leviers aux changements à cette même échelle. 
-                      L'UMR Tetis intervient dans cet atelier plus spécifiquement sur la caractérisation de l'activité 
-                      agricole et les moyens de suivi de l'activité agricole à moindre coût.
-                    </li>
-                  </ul>
-                  <li>
-                    <b>Atelier Environnement : </b> Cet atelier a comme objectif d'apporter des connaissances sur le 
-                    fonctionnement du milieu physique et d'établir un diagnostic de l'impact des pratiques sur les différents 
-                    compartiments sols, nappes et rivières à l'échelle du bassin versant. </br>
-                    Les activités ici portent sur la mise au point d'outils d'évaluation environnementale des pratiques et de 
-                    modèles adaptés aux milieux tropicaux. Il s'agit de rendre compte i) des transferts en surface en lien avec 
-                    les pratiques culturales et les voies de transport (dissous dans l'eau ou fixé sur les particules de sol 
-                    transportées par l'eau), ii) du niveau de contamination des masses d'eau souterraines qui vont alimenter 
-                    les rvières, en lien avec leur fonctionnement et le temps de résidence en leur sein (l'eau peut mettre 
-                    plusieurs dizaines d'années entre le momentoù elle s'infiltre dans le sol et celui où elle rejoint les rivières 
-                    vua les nappes d'eau souterraines). Ces travaux contribueront à proposer un modèle de représentation 
-                    des flux de contamination à l'échelle du bassin. Il s'agit aussi de proposer une méthode innovante de 
-                    limitation des transferts de polluants du sol vers la plante.
-                </li>
-                <li>
-                  <b>Atelier d'Accompagnement :</b> Cet atelier a comme objectif de mettre en place un dispositif 
-                  d'accompagnement des innovations pour le changement. L'UMR Tetis intervient dans cet atelier plus 
-                  spécifiquement : 
-                  <ul>
-                    <li>
-                      dans la construction d'une représentation partagée des relations entre l'agriculture et 
-                      l'environnement et la construction d'un système d'indicateur y afférent,
-                    </li>
-                    <li>
-                      dans le développement d'outil(s) mobile(s) de monitoring environnemental participatif,
-                    </li>
-                    <li>
-                      dans la mise en place d'un réseau d'agriculteurs et d'expérimentation, l'animation de ce réseau et 
-                      le suivi / évaluation des pratiques.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-
-              <!-- Un atlas pour quoi, pour qui ? -->
-              <h5>Un atlas pour quoi ? Pour qui ?</h5>
-              <p>
-                La cartographie en ligne du projet Rivage vise à dépasser le simple outil d'affichage et de consultation de couches 
-                d'informations géographiques et des données associées.
-              </p>
-              <p>
-                Cette plateforme cartographique permet de mettre en valeur les informations issues du projet Rivage, avec en 
-                particulier leur mise à disposition du public sous forme narrative. Sur la base des informations issues du Système 
-                d'Information du projet et des écoles acteurs, dispositifs participatifs constitués dans le projet Rivage, différents 
-                itinéraires de pratiques et d'innovations sont ainsi restituables, en replaçant les différentes expériences dans le 
-                temps long de l'évolution de l'agriculture guadeloupéenne des dernières décennies et dans l'espace 
-                géographique des contraintes et des opportunités territoriales.
-              </p>
-              <p>
-                La cartographie en ligne permet la valorisation des produits de la recherche et offre au grand public une 
-                approche qui mobilise activement la curiosité et le débat. Nous proposons ainsi, au travers de cette cartographie 
-                en ligne, la possibilité de présenter la connaissance dans des ateliers, forums, activités pédagogiques, sorties et 
-                visites de terrains. C'est l'un des enjeux majeurs de cet outil.
-              </p>
-
-              <!-- Comment utiliser l'atlas ? -->
-              <h5>Comment utiliser l'atlas ?</h5>
-              <p>
-                Pour une première approche de la prise en main de l'outil, référez-vous à l'onglet "Aide" en haut de la page. Pour 
-                des informations plus détaillées, vous pouvez consulter la documentation dans le <a href="https://gitlab.com/GradelerM/rivage-guadeloupe/-/wikis/home" target="_blank">Wiki GitLab du projet</a>.
-              </p>
-              <p><b>Site internet</b></p>
-              <p><a href="https://rivage-guadeloupe.teledetection.fr/" target="_blank">rivage-guadeloupe.teledetection.fr/</a></p>
-              <p><b>Informations cartographiques</b></p>
-              <h6>Projection</h6>
-              <p>
-                EPSG:3857 (<i>Web Mercator</i>)
-              </p>
-              <h6>Emprise</h6>
-              <p>
-                ??? [<i>Web Mercator</i>]
-              </p>
-
-              <!-- Qui sommes-nous ? -->
-              <h5>Qui sommes-nous ?</h5>
-              <p><b>Conception de la plateforme de cartographie en ligne</b></p>
-              <h6>Jean-Pierre Chery</h6>
-              <p>
-                AgroParisTech – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale » <br />
-                Jean-pierre.chery@agroparistech.fr
-              </p>
-              <h6>Marie Gradeler</h6>
-              <p>
-                Contractuelle, Géomatique, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale » <br />
-                marie.gradeler@gmail.com
-              </p>
-              <p><b>Développement de la base de données et de la cartographie en ligne</b></p>
-              <p>
-                Dans le cadre du projet FEDER Région Guadeloupe Rivage 2014-2020
-              </p>
-              <h6>Vincent Bonnal</h6>
-              <p>
-                Chercheur, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale »<br />
-                Vincent.bonnal@cirad.fr
-              </p>
-              <h6>Aurélie Dourdain</h6>
-              <p>
-                Chercheure, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale »<br />
-                aurelie.dourdain@cirad.fr
-              </p>
-              <h6>Marie Gradeler</h6>
-              <p>
-                Contractuelle, Géomatique, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale » <br />
-                marie.gradeler@gmail.com
-              </p>
-              <p><b>Contributions pour la cartographie narrative du projet Rivage</b></p>
-              <h6>Vincent Bonnal</h6>
-              <p>
-                Chercheur, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale »<br />
-                Vincent.bonnal@cirad.fr
-              </p>
-              <h6>Jeremy Bourgoin</h6>
-              <p>
-                Chercheur, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale »<br />
-                jeremy.bourgoin@cirad.fr
-              </p>
-              <h6>Philippe Cattan</h6>
-              <p>
-                Chercheur, Cirad – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale »<br />
-                Philippe.cattan@cirad.fr
-              </p>
-              <h6>Jean-Pierre Chery</h6>
-              <p>
-                AgroParisTech – Unité Mixte de Recherche « Territoire, Environnement, Télédétection et information spatiale »<br />
-                Jean-pierre.chery@agroparistech.fr
-              </p>
-              <p><b>Pour nous contacter</b></p>
-              <h6>
-                Cirad<br />
-                UMR TETIS
-              </h6>
-              <p>
-                Maison de la télédétection<br />
-                500 rue Jean-François Breton 34093 Montpellier cedex 5<br />
-                Tel. (Standard) : (+33) 04 67 54 87 54<br />
-                E-mail : aurelie.dourdain@cirad.fr
-              </p>
-
-              <!-- Mentions légales -->
-              <h5>Mentions légales</h5>
-              <p>
-                Site mis en ligne le 01/03/2021
-              </p>
-              <p><b>Unité Mixte de Recherche TETIS</b></p>
-              <p>
-                Maison de la télédétection<br />
-                500 rue Jean-François Breton<br />
-                34093 Montpellier Cedex 5, France
-              </p>
-              <p><b>Direction de la publication</b></p>
-              <p>
-                <i>En cours de rédaction...</i>
-              </p>
-              <p><b>Administration du site, édition</b></p>
-              <p>
-                <i>En cours de rédaction...</i>
-              </p>
-              <p><b>Crédits</b></p>
-              <h5>Hébergement : </h5><span><p>UMR TETIS, Montpellier, France</p></span>
-              <h5>Gestion et coordination : </h5><span><p>UMR TETIS, Montpellier, France</p></span>
-              <h5>Charte graphique et développement informatique : </h5><span><p><i>En cours de rédaction...</i></p></span>
-              <p><b>Droits et devoirs des utilisateurs</b></p>
-              <p>
-                Le contenu de ce site est protégé par la propriété littéraire et artistique, la convention de Berne, 
-                la directive 96/9/CE et le code de la propriété intellectuelle, livre I. Toute reproduction, autrement 
-                que par l'usage privé du visiteur du site, en vue notamment d'une diffusion publique par n'importe 
-                quel moyen, est strictement interdite sans l'autorisation écrite de la personne chargée de la direction 
-                de publication du site. Les visiteurs sont responsables de l'interprétation et de l'utilisation des données 
-                consultées, ainsi que des informations qu'ils soumettent dans les formulaires. Il leur appartient de 
-                respecter les réglementations en vigueur. Pour des informations nominatives, les visiteurs devront respecter 
-                les recommandations de la Commission nationale de l'informatique et des libertés (Cnil). En particulier, 
-                il est interdit de copier les informations de ce site et de les utiliser à des fins commerciales ou publicitaires.
-              </p>
-              <p><b>Création de liens</b></p>
-              <p>
-                La création de liens vers l’une des pages de ce site doit mentionner explicitement le nom de l’Unité Mixte de Recherche TETIS.
-              </p>
-              <p><b>Crédits photos et illustrations</b></p>
-              <p>
-                Tous droits de reproduction réservés, en France comme à l'étranger. Toutes les photos diffusées sur ce site 
-                sont la propriété de l’Unité Mixte de Recherche TETIS ou sont utilisées avec l’accord de leurs auteurs dans le cadre strict de ce site.
-              </p>
-
-            </div>
-            <div class="right-column">
-              <h5>Les partenaires</h5>
-              <div class="modal-logos">
-                <div id="modal-logo-cirad">
-                  <a href="https://www.cirad.fr/" target="_blank"><img src="../landingpage/logo_Cirad.gif"/></a>
-                </div>
-                <div id="modal-logo-inrae">
-                  <a href="https://www.inrae.fr/" target="_blank"><img src="../landingpage/logo-INRAE.png"/></a>
-                </div>
-                <div id="modal-logo-feder">
-                  <a href="https://www.europe-guadeloupe.fr/" target="_blank"><img src="../landingpage/logo_FEDER_UE.jpeg"/></a>
-                </div>
-                <div id="modal-logo-brgm">
-                  <a href="https://www.brgm.fr/" target="_blank"><img src="../landingpage/logo_BRGM.svg"/></a>
-                </div>
-                <div id="modal-logo-regionguadeloupe">
-                  <a href="https://www.regionguadeloupe.fr/accueil/#_" target="_blank"><img src="../landingpage/logo_region_Guadeloupe.svg"/></a>
-                </div>
-                <div id="modal-logo-universiteantilles">
-                  <a href="http://www.univ-ag.fr/" target="_blank"><img src="../landingpage/logo_universite_antilles.jpeg"/></a>
-                </div>
-
-
-                  <!--<a href="http://www2.agroparistech.fr/" target="_blank"><img src="../landingpage/agroparistech.png"/></a>-->
-
-              </div>
-            </div>
-          </div>
+          <!-- Filled with components/map_apropos_modal.php -->
+          <?php include("./components/map_apropos_modal.php") ?>
         </div>
       </div>
 
@@ -609,8 +318,9 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           <span class="close-modal">&times;</span>
           <p><b>Bienvenue dans le tutoriel de l'application Rivage Guadeloupe</b></p>
           <p>
-            Découvrez pas-à-pas le fonctionnement de la carte interactive du
-            projet Rivage Guadeloupe. Pour de plus amples informations sur les fonctionnalités,
+            Découvrez pas-à-pas le fonctionnement de la carte interactive NAMO. 
+            Pour de plus amples informations sur les fonctionnalités,
+            <!-- WIKI LINK -->
             référez-vous à la <a href="https://gitlab.com/GradelerM/rivage-guadeloupe" target="_blank">documentation</a>.
           </p>
           <div class="modal-nav"><a class="modal-next">Suivant ></a></div>
@@ -677,7 +387,8 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           <p><b>Vous pouvez maintenant explorer la carte et ses fonctionnalités !</b></p>
           <p>
             Pour ceux qui souhaitent en savoir plus, rendez-vous sur le
-            <a href="https://gitlab.com/GradelerM/rivage-guadeloupe" target="_blank">GitLab du projet</a>.
+            <!-- REPO LINK -->
+            <a href="https://gitlab.com/GradelerM/rivage-guadeloupe" target="_blank">dépôt du projet</a>.
           </p>
           <div class="modal-nav"><a class="fin">J'ai compris !</a></div>
         </div>
@@ -765,6 +476,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
 
     <!-- Button to toggle menu on small screen (and small logo) -->
     <div class="navButton headerXS">
+      <!-- HORIZONTAL LOGO -->
       <a href="#" id="logoXS"><img src="images/assets/logos/logoHorizontal.png" height="28px"/></a>
       <!-- Burger menu dropdown in case it's needed for a mobile version -->
       <!-- <button id="small-nav-button"><svg class="menu-burger-icon"><use xlink:href="#iconeMenu" /></svg></button> -->
@@ -777,7 +489,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         La taille de votre écran n'est pas suffisante pour utiliser confortablement l'application 
         et la version mobile n'est pas encore disponible.</br>
         </br>
-        Merci d'utiliser un autre appareil pour naviguer dans la carte.
+        Merci d'utiliser un écran plus large pour utiliser l'application.
       </p>
     </div>
     <!-- End of mobile content div -->

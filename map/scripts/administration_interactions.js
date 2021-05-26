@@ -1471,7 +1471,7 @@ jQuery(document).ready(function(){
                         // Display the error in the console
                         console.error("Couldn't fetch capabilities from source");
 
-                        var message = '<p>NAMO ne peut pas encore lire les Capabilities comprenant des couches imbriquées. Veuillez passer par l\'<a href="' + geoserver_url + '" target="_blank">instance locale de GeoServer</a> pour rediriger le flux WMS, puis revenir ici pour ajouter les couches depuis votre GeoServer local.</p>';
+                        var message = '<p>NAMO ne peut pas encore lire les Capabilities comprenant des couches imbriquées. Veuillez passer par GeoServer pour rediriger le flux WMS, puis revenir ici pour ajouter les couches redirigées.</p>';
                         $('#data-source-config-panel .info-error').html(message);
                         
                     } else { // We can read the Capabilities
