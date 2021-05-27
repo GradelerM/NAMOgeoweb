@@ -119,7 +119,12 @@ Overriding OpenLayers styles
 Overriding OpenLayers Extensions styles
 ===============================================================================
 */
-.ol-storymap .ol-scroll-top, .ol-storymap .ol-scroll-next {
+.ol-storymap .ol-scroll-top {
+  height: 50vh;
+}
+
+.ol-storymap .ol-scroll-top, 
+.ol-storymap .ol-scroll-next {
   color: var(--map-control) !important;
 }
 
