@@ -28,12 +28,8 @@ if (isset($_SESSION['user']) && $_SESSION['admin'] == true) {
 }
 
 // Connect to database
-$attempts = 2;
-echo 'api.php attempt '.$attempts;
 $conn_string = "host=".$_SESSION['db_host']." port=".$_SESSION['db_port']." dbname=".$_SESSION['db_name']." user=".$_SESSION['db_user']." password=".$_SESSION['db_password'];
-while ($attempts) {
     $dbconn = pg_connect($conn_string);
-}
 if (!$dbconn) {
     $response["error"] = "Database connection failed";
     pg_close($dbconn); 
