@@ -12,8 +12,11 @@ $response = array();
 $response["success"] = false;
 
 // Connecting to the database
+$attempts = 10;
 $conn_string = "host=".$_SESSION['db_host']." port=".$_SESSION['db_port']." dbname=".$_SESSION['db_name']." user=".$_SESSION['db_user']." password=".$_SESSION['db_password'];
-$dbconn = pg_connect($conn_string);
+while ($attempts) {
+    $dbconn = pg_connect($conn_string);
+}
 if (!$dbconn) {
     $response["error"] = "Database connection failed";
     pg_close($dbconn); 
