@@ -12,7 +12,7 @@ $response = array();
 $response["success"] = false;
 
 // Connecting to the database
-$attempts = 5;
+$attempts = 2;
 echo 'api.php attempt '.$attempts;
 $conn_string = "host=".$_SESSION['db_host']." port=".$_SESSION['db_port']." dbname=".$_SESSION['db_name']." user=".$_SESSION['db_user']." password=".$_SESSION['db_password'];
 while ($attempts) {
