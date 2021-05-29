@@ -23,7 +23,7 @@
         }
         
         
-        $insert_array['username']=pg_escape_string(htmlspecialchars()trim($_REQUEST['username']))) ;	
+        $insert_array['username']=pg_escape_string(htmlspecialchars(trim($_REQUEST['username']))) ;	
         $insert_array['password']=pg_escape_string(htmlspecialchars(trim($_REQUEST['password']))) ;	  
         $insert_array['email']=pg_escape_string(htmlspecialchars(trim($_REQUEST['email']))) ;
         $insert_array['motivations']=pg_escape_string(htmlspecialchars(trim($_REQUEST['motivations']))) ;        
