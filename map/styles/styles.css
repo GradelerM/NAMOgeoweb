@@ -289,23 +289,23 @@ hr {
   background-color: var(--cta-hover);
 }
 
-.bluebtn {
+.positivebtn {
   color: #fff;
   background-color: var(--positive);
   transition: 0.2s;
 }
 
-.bluebtn:hover {
+.positivebtn:hover {
   background-color: var(--positive-hover);
 }
 
-.orangebtn {
+.negativebtn {
   color: #fff;
   background-color: var(--negative);
   transition: 0.2s;
 }
 
-.orangebtn:hover {
+.negativebtn:hover {
   background-color: var(--negative-hover);
 }
 

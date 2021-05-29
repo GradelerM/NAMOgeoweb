@@ -81,7 +81,10 @@ function writeStoryMap(map, source, book_id) {
 
                         // Fetch the needed elements for updating the map's view
                         var basemap     = chapter.map.basemap;
-                        var layers  = chapter.map.layers.split(',');
+
+                        if (layers) {
+                            var layers  = chapter.map.layers.split(',');
+                        }
                         var latitude    = chapter.map.latitude;
                         var longitude   = chapter.map.longitude;
                         var zoom        = chapter.map.zoom;
@@ -148,7 +151,10 @@ function writeStoryMap(map, source, book_id) {
 
                         // Fetch the needed elements for updating the map's view
                         var basemap     = chapter.map.basemap;
-                        var layers  = chapter.map.layers.split(',');
+
+                        if (layers) {
+                            var layers      = chapter.map.layers.split(',');
+                        }
                         var latitude    = chapter.map.latitude;
                         var longitude   = chapter.map.longitude;
                         var zoom        = chapter.map.zoom;

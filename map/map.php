@@ -292,8 +292,8 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
             Retournez sur la page d'accueil vous fera quitter la carte. Pour ne pas perdre l'état de 
             votre session de consultation, vous pouvez ouvrir la page d'accueil dans un nouvel onglet.
           </p>
-          <button class="mainButton orangebtn" onclick="window.location.href='/';">Je veux quitter</button>
-          <button class="mainButton bluebtn" onclick="window.open('/', '_blank');">Nouvel onglet</button>
+          <button class="mainButton negativebtn" onclick="window.location.href='/';">Je veux quitter</button>
+          <button class="mainButton positivebtn" onclick="window.open('/', '_blank');">Nouvel onglet</button>
           <button class="mainButton classic stop-modal">Annuler</button>
         </div>
       </div>
@@ -848,7 +848,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <!-- See examples above -->
       </div>
       <div id="map-message" class="map-message-displayed">
-        <button id="back-to-library-control" class="mainButton cta library">Fermer la carte narrative</button>
+        <button id="back-to-library-control" class="mainButton positivebtn library">Fermer la carte narrative</button>
       </div>
     </div>
     <!-- End of custom controls div -->
@@ -1060,8 +1060,8 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <!-- End of help section -->
         <!-- Selection buttons on top -->
         <div id="selection-buttons" class="div-selection-buttons">
-          <button id="select-commune" class="mainButton bluebtn disabled">Sélectionner une commune</button>
-          <button id="select-reset" class="mainButton orangebtn disabled">Supprimer ma sélection</button>
+          <button id="select-commune" class="mainButton positivebtn disabled">Sélectionner une commune</button>
+          <button id="select-reset" class="mainButton negativebtn disabled">Supprimer ma sélection</button>
         </div>
         <hr />
         <!-- Population graph div -->
@@ -1148,7 +1148,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
               <option value="empriseEtangOr">Etang de l'Or</option>
               <option value="empriseEtangsPalavasiens">Etangs palavasiens</option>
             </select>
-            <button id="fly-to-area" class="mainButton bluebtn">S'y rendre</button>
+            <button id="fly-to-area" class="mainButton positivebtn">S'y rendre</button>
           </div>
 
           <!-- Displaying selected layers and select DPSIR attribute -->
