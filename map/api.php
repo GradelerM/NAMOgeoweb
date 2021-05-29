@@ -74,7 +74,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'fetch_users_books')) {
     $sql = "SELECT * FROM userdata.books WHERE author_id=".$_SESSION["user_id"]." ORDER BY id";
     $result = pg_query($dbconn,$sql);
 
-    if (pg_num_rows($result)<>0) { // The user owns some books
+    if (pg_num_rows($result) >= 0) { // The query worked
 
         if (isset($books_list)) {
             unset($books_list);

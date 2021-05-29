@@ -69,9 +69,7 @@ execOnLoad = function() { // Wrap everything in it so the applications loads onl
         =================================================================================
         */
         function loadUserBooksList() {
-
-            console.log("Loading books lists");
-            
+           
             $.ajax({
                 url: './api.php',
                 method: 'POST',
