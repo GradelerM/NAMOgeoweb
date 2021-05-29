@@ -756,7 +756,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
       <!-- Connexion div -->
       <div id="connexion">
         <button id="login-button" class="mainButton classic" <?php echo $login_buttons;?>>Se connecter</button>
-        <button id="signup-button" class="mainButton cta" <?php echo $login_buttons;?>>S'inscrire</button>
+        <button id="signup-button" class="mainButton positivebtn" <?php echo $login_buttons;?>>S'inscrire</button>
         <span style="font-size: 0.8em; margin-right: 12px; <?php echo $login_info?>">Utilisateur : <?php echo $username;?></span>
         <button id="logout-button" class="mainButton cta" style="<?php echo $login_info?>">Se déconnecter</button>
       </div>
@@ -1115,7 +1115,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           </div>
           <div id="story" class="story-container"></div>
           <div id="story-footer" class="story-footer">
-            <button id="back-to-library" class="mainButton cta library">Retourner à la bibliothèque des cartes narratives</button>
+            <button id="back-to-library" class="mainButton positivebtn library">Retourner à la bibliothèque des cartes narratives</button>
           </div>
         </div>
       </div>
