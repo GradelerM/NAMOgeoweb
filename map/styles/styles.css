@@ -7,14 +7,18 @@ Document variables
 /* Please note that it's still a work in progress */
 :root {
   /* Interface main colors */
-  --main-color: #32A329; /* Replaces original #29959B blue */
-  --main-color-hover: #20691A; /* Replaces original #217C81 blue */
-  --cta-color: #E00E73; /*Replaces original #FF9D0A orange */
-  --cta-color-hover: #A70050; /* Replaces original #EA8D03 orange */
+  --main: #32A329; /* Replaces original #29959B blue */
+  --main-hover: #20691A; /* Replaces original #217C81 blue */
+  --cta: #E00E73; /*Replaces original #FF9D0A orange */
+  --cta-hover: #A70050; /* Replaces original #EA8D03 orange */
   --black: #0B170B; /* Replaces original #262236 black */
   --black90: rgba(11,23,11,0.9); /* Replaces original rgba(38,34,54,0.9) black */
 
-  --magenta: #E00E73; /*Used for error messages */
+  --positive: #32A329;
+  --positive-hover: #20691A;
+
+  --negative :#e00e73;
+  --negative-hover : #A70050;
 
   --lightgrey: #EEEEF1;
   --grey: #AFAEB4;
@@ -94,7 +98,7 @@ Grid construction
 }
 .loader {
   border: 9px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid var(--main-color);
+  border-top: 8px solid var(--main);
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -247,7 +251,7 @@ hr {
 }
 
 .error {
-  color: var(--magenta);
+  color: var(--negative);
 }
 
 .mainButton {
@@ -271,38 +275,38 @@ hr {
 }
 
 .classic:hover {
-  color: var(--main-color);
+  color: var(--main);
   background-color: #EEEEF1;
 }
 
 .cta {
   color: #fff;
-  background-color: var(--main-color);
+  background-color: var(--cta);
   transition: 0.2s;
 }
 
 .cta:hover {
-  background-color: var(--cta-color);
+  background-color: var(--cta-hover);
 }
 
 .bluebtn {
   color: #fff;
-  background-color: var(--main-color);
+  background-color: var(--positive);
   transition: 0.2s;
 }
 
 .bluebtn:hover {
-  background-color: var(--main-color-hover);
+  background-color: var(--positive-hover);
 }
 
 .orangebtn {
   color: #fff;
-  background-color: var(--cta-color);
+  background-color: var(--negative);
   transition: 0.2s;
 }
 
 .orangebtn:hover {
-  background-color: var(--cta-color-hover);
+  background-color: var(--negative-hover);
 }
 
 .navButton button {
@@ -327,7 +331,7 @@ hr {
 }
 
 .info-link:hover {
-  fill: var(--main-color);
+  fill: var(--main);
 }
 
 .theme-arrow {
@@ -409,7 +413,7 @@ form p {
   top: 6px;
   width: 12px;
   height: 12px;
-  background: var(--main-color);
+  background: var(--main);
 }
 
 /* Unchecked tick style */
@@ -508,18 +512,18 @@ Navbar content (left side)
 
 /* Hover styles */
 .navbar a:hover {
-  color: var(--main-color);
+  color: var(--main);
   background-color: #EEEEF1;
 }
 
 .navbar a:hover .nav-tab-icon {
-  fill: var(--main-color);
+  fill: var(--main);
 }
 
 /* Active styles */
 .navbar a.active {
   color: #fff;
-  background-color: var(--main-color);
+  background-color: var(--main);
 }
 
 .navbar a.active .nav-tab-icon {
@@ -588,7 +592,7 @@ Header content
 }
 
 #navList a:hover, a:active {
-  color: var(--main-color);
+  color: var(--main);
 }
 
 #recherche {
@@ -603,7 +607,7 @@ Header content
 }
 
 #recherche button:hover {
-  color: var(--main-color);
+  color: var(--main);
 }
 
 #recherche button.disabled:hover {
@@ -678,11 +682,11 @@ Header content
 }
 
 .modal-content a {
-  color: var(--main-color-hover);
+  color: var(--main-hover);
 }
 
 .modal-content a:visited {
-  color: var(--main-color-hover);
+  color: var(--main-hover);
 }
 
 .modal-content > h4 {
@@ -730,7 +734,7 @@ label[for=signup_motivations] {
 .close-modal {
   margin-top: -28px;
   margin-right: -58px;
-  color: var(--main-color);
+  color: var(--main);
   float: right;
   font-size: 28px;
   font-weight: 900;
@@ -738,7 +742,7 @@ label[for=signup_motivations] {
 
 .close-modal:hover,
 .close-modal:focus {
-  color: var(--main-color-hover);
+  color: var(--main-hover);
   text-decoration: none;
   cursor: pointer;
 }
@@ -751,7 +755,7 @@ label[for=signup_motivations] {
 }
 
 .modal-nav:hover {
-  color: var(--main-color);
+  color: var(--main);
 }
 
 .tooltip-modal {
@@ -818,15 +822,15 @@ label[for=signup_motivations] {
 
 .apropos-modal b {
   font-weight: 700;
-  color: var(--main-color);
+  color: var(--main);
 }
 
 #signup-success-message {
-  color: var(--main-color-hover);
+  color: var(--positive-hover);
 }
 
 #signup-error-message {
-  color: var(--cta-color-hover);
+  color: var(--negative);
 }
 
 /*
@@ -978,7 +982,7 @@ Floating legend styles
 }
 
 .floatLegend-button:hover {
-  color: var(--main-color);
+  color: var(--main);
 }
 
 .legend-active {
@@ -1444,7 +1448,7 @@ Tab content
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  background-color: var(--main-color);
+  background-color: var(--main);
   color: #fff;
 }
 
@@ -1455,7 +1459,7 @@ Tab content
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  background-color: var(--main-color);
+  background-color: var(--main);
   color: #fff;
 }
 
@@ -1585,7 +1589,7 @@ Tab content
 }
 
 .story-header svg:hover {
-  fill: var(--main-color-hover);
+  fill: var(--main-hover);
 }
 
 .story-header a.disabled-btn svg,
@@ -1602,7 +1606,7 @@ Tab content
 }
 
 #back-to-library-arrow:hover {
-  color: var(--main-color-hover);
+  color: var(--main-hover);
 }
 
 .font-size-controls {
@@ -1664,7 +1668,7 @@ Tab content
   font-size: 1em;
   font-style: italic;
   text-align: center;
-  color: var(--main-color);
+  color: var(--main);
 }
 
 .story-container .story-media {
@@ -1916,7 +1920,7 @@ Map section
 }
 
 .ol-popup-closer a:hover {
-  color: var(--main-color);
+  color: var(--main);
 }
 
 .ol-popup-closer:after {

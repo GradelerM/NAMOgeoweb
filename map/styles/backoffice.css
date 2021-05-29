@@ -9,6 +9,8 @@ Document variables
     --mobile-padding: 20px 8px;
     --btn-padding: 8px 16px;
 
+    --main: #32A329; /* Main app's color (positive) */
+    --main-hover: #20691A; /* Main app's color (hover) */
     --cta : #e00e73;
     --cta-hover: #A70050;
     --positive: #32A329;
@@ -471,8 +473,8 @@ Table of contents - TOC
 
 .table-of-contents-list li.active {
     color: #fff;
-    border-color: var(--active);
-    background-color: var(--active);
+    border-color: var(--main);
+    background-color: var(--main);
 }
 
 .table-of-contents-list li.active svg {
@@ -1085,7 +1087,7 @@ Aperçu
     font-size: 1em;
     font-style: italic;
     text-align: center;
-    color: var(--main-color);
+    color: var(--main);
 }
 
 .story-container .chapter {
@@ -1247,7 +1249,7 @@ Toolbars and other
 
 .contextual-menu li:hover {
     color: #fff;
-    background-color: var(--active);
+    background-color: var(--main);
 }
 
 .contextual-menu .disabled li {

@@ -1,0 +1,47 @@
+/*
+===============================================================================
+Document variables
+===============================================================================
+*/
+
+/* Note: colors must be easy to read on a white background for a better user experience. */
+/* Note: [color]-hover should be a slighly darker version of [color] */
+/* Note: if you don't know where to start, only edit "main" and "cta" colors with positive / negative colors (green / dark pink, blue / red, …) */
+
+:root {
+
+    /* Interface main colors */
+    --main: #32A329; /* Main app's color (positive) */
+    --main-hover: #20691A; /* Main app's color (hover) */
+
+    --cta: #E00E73; /* Call to action */
+    --cta-hover: #A70050; /* Call to action - hover */
+
+    /* By default, positive = main and negative = cta but you can set a different value */
+    --positive: var(--main);
+    --positive-hover: var(--main-hover);
+
+    --negative :var(--cta);
+    --negative-hover : var(--cta-hover);
+
+    /* ==================================================================== */
+
+    /* Black: you should edit the black color to match your main color */
+    --black: #0B170B; /* Black */
+    --black90: rgba(11,23,11,0.9); /* 90% black */
+    
+    /* Map buttons main colors */
+    --map-control:  rgba(50, 163, 41, 0.5); /* Replaces default OpenLayers rgba(41, 149, 155, 0.5) blue */
+    --map-control-hover: rgba(50, 163, 41, 0.8); /* Replaces default OpenLayers rgba(41, 149, 155, 0.8) blue */
+
+    /* ==================================================================== */
+
+    /* Colors used for DPSIR Model (still under development, don't edit if you don't use it) */
+    --green: #32A329;
+    --magenta: #E00E73;
+    --orange: #FA9C0E;
+    --red: #E42849;
+    --purple: #852E9B;
+    --blue: #0582A9;  
+
+  }
