@@ -3,28 +3,13 @@
 Document variables
 ===============================================================================
 */
+@import "palette.css";
+
 :root {
     --main-padding: 20px;
     --main-margin: 0 40px 20px 40px;
     --mobile-padding: 20px 8px;
     --btn-padding: 8px 16px;
-
-    --main: #32A329; /* Main app's color (positive) */
-    --main-hover: #20691A; /* Main app's color (hover) */
-    --cta : #e00e73;
-    --cta-hover: #A70050;
-    --positive: #32A329;
-    --positive-hover: #20691A;
-    --negative :#e00e73;
-    --negative-hover : #A70050;
-    --active: #0582A9;
-
-    --green: #32A329;
-    --magenta: #E00E73;
-    --orange: #FA9C0E;
-    --red: #E42849;
-    --purple: #852E9B;
-    --blue: #0582A9;
 
     --black: #0B170B;
     --lightgrey: #EEEEF1;

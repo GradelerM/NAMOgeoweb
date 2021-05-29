@@ -3,19 +3,7 @@
 Document variables
 ===============================================================================
 */
-/* This is an attempt at replacing the original RestEAUr'Lag colors with variables. */
-/* Please note that it's still a work in progress */
-:root {
-  /* Interface main colors */
-  --main: #32A329; /* Replaces original #29959B blue */
-  --main-hover: #20691A; /* Replaces original #217C81 blue */
-  --black: #0B170B; /* Replaces original #262236 black */
-  --black90: rgba(11,23,11,0.9); /* Replaces original rgba(38,34,54,0.9) black */
-
-  /* Map buttons main colors */
-  --map-control:  rgba(50, 163, 41, 0.5); /* Replaces default OpenLayers rgba(41, 149, 155, 0.5) blue */
-  --map-control-hover: rgba(50, 163, 41, 0.8); /* Replaces default OpenLayers rgba(41, 149, 155, 0.8) blue */
-}
+@import "palette.css";
 
 /*
 ===============================================================================
