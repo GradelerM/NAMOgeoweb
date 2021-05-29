@@ -1177,10 +1177,6 @@ execOnLoad = function() { // Wrap everything in it so the applications loads onl
         // Generating an empty paragraph in the chapter
         function addEmptyParagraph(chapter_id, type) {
 
-            console.log('Adding empty paragraph');
-            console.log('Chapter_id: ' + chapter_id);
-            console.log('Type: ' + type);
-
             $.ajax({
                 url: './api.php',
                 method: 'POST',

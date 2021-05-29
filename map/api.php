@@ -848,9 +848,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'save_paragraph_content')
 // Create a new paragraph
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'add_new_paragraph') and isset($_POST["chapter_id"]) and isset($_POST["type"])) {
-
-    $response["test"] = true;
-    
+   
     if (isset($position)) {
         unset($position);
     }
