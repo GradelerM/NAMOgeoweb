@@ -896,7 +896,7 @@ elseif (isset($_POST["mode"]) and ($_POST["mode"] == 'add_new_paragraph') and is
                 ." FROM userdata.paragraphs"
                 ." INNER JOIN userdata.chapters"
                 ." ON userdata.paragraphs.chapter_id = userdata.chapters.id"
-                ." WHERE chapter_id = ".$_POST["chapter_id"]
+                ." WHERE chapter_id = ".$chapter_id
                 ." AND book_id = ".$_SESSION["book_id"]
                 ." ORDER BY userdata.paragraphs.position DESC LIMIT 1";
         $result = pg_query($dbconn,$sql);
