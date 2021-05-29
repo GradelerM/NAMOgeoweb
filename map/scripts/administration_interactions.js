@@ -306,7 +306,7 @@ jQuery(document).ready(function(){
             success: function(response) {
                
                 // Check if any error happened
-                if (response.success == true || response.success == false && response.error_code == 2) { // No error happened, we can keep processing
+                if (response.success == true || response.error_code == 2) { // No error happened, we can keep processing
 
                     // Display the modal with a successful message
                     var message = "<p>L'utilisateur peut maintenant s'authentifier sur l'application</p>"; 
@@ -394,7 +394,7 @@ jQuery(document).ready(function(){
             success: function(response) {
                 
                 // Check if any error happened
-                if (response.success == true || response.success == false && response.error_code == 2) { // No error happened, we can keep processing
+                if (response.success == true || response.error_code == 2) { // No error happened, we can keep processing
 
                     // Display the modal with a successful message
                     var message = "<p>La demande a été rejetée et l'utilisateur a été supprimé.</p>"; 
@@ -482,7 +482,7 @@ jQuery(document).ready(function(){
             success: function(response) {
                
                 // Check if any error happened
-                if (response.success == true || response.success == false && response.error_code == 2) { // No error happened, we can keep processing
+                if (response.success == true || response.error_code == 2) { // No error happened, we can keep processing
 
                     // Display the modal with a successful message
                     var message = "<p>L'utilisateur ne peut maintenant plus accéder aux outils de contribution de la plateforme.</p>"; 
