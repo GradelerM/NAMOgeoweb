@@ -6,7 +6,7 @@
 // PROJECT INFORMATIONS
 // ====================================================================================
 // Project name and logos
-$project_name='Rivage';
+$project_name='Projet NAMO';
 $vertical_logo='verticalNAMO.png';
 $horizontal_logo='horizontalNAMO.png';
 
