@@ -1,14 +1,10 @@
 # Bienvenue sur le dépôt de code de l'application NAMO GeoWeb
 
+![Logo horizontal NAMO](./logos/horizontalNAMO.svg)
+
 Ce dépôt contient les fichiers de l'application de cartographie interactive et narrative NAMO GeoWeb produite initialement pour les projets [RestEAUr'Lag](https://gitlab.com/GradelerM/resteaur-lag) et [Rivage](https://gitlab.com/GradelerM/rivage-guadeloupe).
 
-Vous trouverez ici le [script d'installation](scripts_install/sh/geoserver_install.sh) du serveur mis en place dans le cadre du projet, ainsi que d'autre fichiers visant à faciliter le traitement des données avec python ou le sql.
-
-Dans le dossier [docs](docs) se trouve un [un texte explicatif](docs/IDG.md) pour comprendre l'infrastructure de données mise en place. Le reste de la documentation est accessible dans le wiki du projet *(en cours de rédaction)*.
-
-Les fichiers HTML, CSS et JavaScript à la racine du projet concernent la page d'accueil de l'application et permettent de rediriger l'utilisateur sur la carte.
-
-Enfin, le répertoire [map](map) contient tous les fichiers nécessaires au bon fonctionnement de la plateforme cartographique.
+Les fichiers HTML, CSS et JavaScript à la racine du projet concernent la page d'accueil de l'application et permettent de rediriger l'utilisateur sur la carte et le répertoire [map](map) contient tous les fichiers nécessaires au bon fonctionnement de la plateforme cartographique.
 
 
 ## Information sur les navigateurs
