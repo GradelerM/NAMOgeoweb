@@ -65,7 +65,7 @@
                     $response["success"] = true;
 
                     // Define a "noreply" adress to send the mails from
-                    $email_noreply = "noreply@teledetection.fr";
+                    $email_noreply = $noreply_mail;
 
                     // Send an email to the administrators
                     // Fetch the administrator's mail adresses from the database
@@ -84,7 +84,7 @@
                         // Write and send the mail
                         $to      = $email_admin;
                         // PROJECT NAME
-                        $subject = 'New user on NAMO Geoweb - Projet RIVAGE';
+                        $subject = 'New user on NAMO Geoweb - '.$project_name;
                         $message = 'Please activate the new user ('.$insert_array['username'].') on NAMO GeoWeb - Projet RIVAGE: https://rivage-guadeloupe.teledetection.fr/map/administration.php';
                         $headers = "From: ".$email_noreply."\r\n" .
                         "Reply-To: ".$email_noreply."\r\n" .
@@ -106,7 +106,7 @@
                     // And send an email to the user
                     $to      = $insert_array['email'];
                     // PROJECT NAME
-                    $subject = 'Inscription sur NAMO Geoweb - Projet RIVAGE';
+                    $subject = 'Inscription sur NAMO Geoweb - '.$project_name;
                     $message = 'Votre inscription sur NAMO Geoweb - Projet RIVAGE a bien été prise en compte. Vous recevrez un mail à cette adresse dès que votre compte aura été activé par un administrateur de la plateforme.';
                     $headers = "From: ".$email_noreply."\r\n" .
                     "Reply-To: ".$email_noreply."\r\n" .

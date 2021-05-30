@@ -58,9 +58,9 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta="description" content="Page principale du projet Rivage"> <!-- PROJECT NAME -->
-  <meta="author" content="Marie Gradeler (2020) à partir des travaux de Vincent Delbar (2019)">
-  <title>Projet Rivage</title><!-- PROJECT NAME -->
+  <meta="description" content="NAMO GeoWeb – <?php echo $project_name; ?>"> <!-- PROJECT NAME -->
+  <meta="author" content="GradelerM – NAMO GeoWeb">
+  <title><?php echo $project_name; ?></title><!-- PROJECT NAME -->
 
   <!-- Leaflet (scripts) -->
   <script src="scripts/lib/leaflet/leaflet.js"></script>
@@ -316,11 +316,11 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <!-- Content -->
         <div class="modal-content">
           <span class="close-modal">&times;</span>
-          <p><b>Bienvenue dans le tutoriel de l'application Rivage Guadeloupe</b></p>
+          <p><b>Bienvenue dans le tutoriel de l'application NAMO GeoWeb – <?php echo $project_name; ?></b></p>
           <p> <!-- PROJECT NAME -->
             Découvrez pas-à-pas le fonctionnement de la carte interactive du
             projet Rivage Guadeloupe. Pour de plus amples informations sur les fonctionnalités,
-            référez-vous à la <a href="https://gitlab.com/GradelerM/rivage-guadeloupe" target="_blank">documentation</a>.
+            référez-vous à la <a href="<?php echo $repo_link; ?>" target="_blank">documentation</a>.
           </p> <!-- REPO LINK -->
           <div class="modal-nav"><a class="modal-next">Suivant ></a></div>
         </div>
@@ -386,7 +386,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           <p><b>Vous pouvez maintenant explorer la carte et ses fonctionnalités !</b></p>
           <p> <!-- REPO LINK -->
             Pour ceux qui souhaitent en savoir plus, rendez-vous sur le
-            <a href="https://gitlab.com/GradelerM/rivage-guadeloupe" target="_blank">GitLab du projet</a>.
+            <a href="<?php echo $repo_link; ?>" target="_blank">GitLab du projet</a>.
           </p>
           <div class="modal-nav"><a class="fin">J'ai compris !</a></div>
         </div>

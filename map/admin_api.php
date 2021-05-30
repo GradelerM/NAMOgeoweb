@@ -38,7 +38,7 @@ if (!$dbconn) {
 }
 
 // Define a "noreply" adress to send the mails from
-$email_noreply = "noreply@teledetection.fr"; // NOREPLY MAIL
+$email_noreply = $noreply_mail; // NOREPLY MAIL
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // If the user is an administrator, allow him to load a list of all users from the database
@@ -143,7 +143,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
+        $subject = 'Autorisation NAMO Geoweb - '.$project_name; // PROJECT NAME
         $message = 'Un administrateur a activé votre compte. Vous pouvez désormais utiliser la plateforme NAMO Geoweb - Projet Rivage accessible à cette adresse : https://rivage-guadeloupe.teledetection.fr/';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -184,7 +184,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
+        $subject = 'Autorisation NAMO Geoweb - '.$project_name; // PROJECT NAME
         $message = 'Votre demande de création d\'un compte pour accéder aux outils participatifs de la plateforme NAMO Geoweb - Projet RIVAGE a été refusée par un administrateur de la plateforme.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -225,7 +225,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Autorisation NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
+        $subject = 'Autorisation NAMO Geoweb - '.$project_name; // PROJECT NAME
         $message = 'Votre compte sur la plateforme NAMO Geoweb - Projet RIVAGE a été temporairement suspendu par un administrateur.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
@@ -266,7 +266,7 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
         $response["email"] = $email;
 
         $to      = $email;
-        $subject = 'Rôle NAMO Geoweb - Projet RIVAGE'; // PROJECT NAME
+        $subject = 'Rôle NAMO Geoweb - '.$project_name; // PROJECT NAME
         $message = 'Un administrateur a édité votre rôle sur la plateforme NAMO Geoweb - Projet RIVAGE. Vous êtes désormais ' + $_POST["role"] + '.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .

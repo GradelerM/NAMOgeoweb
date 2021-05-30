@@ -34,8 +34,8 @@ if (!isset($_SESSION['user'])) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no"/>
         <meta="description" content="Page d'accueil du projet de carte narrative Rivage"/>
-        <meta="author" content="Marie Gradeler (2020)"/>
-        <title>NAMO GeoWeb - storytool</title><!-- PROJECT NAME -->
+        <meta="author" content="GradelerM – NAMO GeoWeb">
+        <title><?php echo $project_name; ?> – storytool</title><!-- PROJECT NAME -->
 
         <!-- Importing fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:500,700" rel="stylesheet">
@@ -377,7 +377,7 @@ if (!isset($_SESSION['user'])) {
                 <div id="header-navlinks">
                     <ul>
                         <!-- WIKI LINK -->
-                        <li><a href="https://gitlab.com/GradelerM/rivage-guadeloupe/-/wikis/home" target="_blank">Documentation</a></li>
+                        <li><a href="<?php echo $wiki_link; ?>" target="_blank">Documentation</a></li>
                         <li><a href="#" target="_blank">Aide</a></li>
                     </ul>
                 </div>

@@ -1,6 +1,4 @@
-<!-- HORIZONTAL LOGO -->
-<!-- PROJECT NAME -->
-<h4>Bienvenue dans l'atlas interactif du <img src="images/assets/logos/logoHorizontal.png" height="60px" title="logo" alt="logo" /></h4>
+<h4>Bienvenue dans l'atlas interactif NAMO GeoWeb du projet <?php echo $project_name;?></h4>
 
-<b>Modal content here</b>
-<b>Add legal notice here</b>
+<p><b>Modal content here</b></p>
+<p>Add legal notice here</p>
