@@ -436,15 +436,15 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         </div>
       </div>
 
-    <!-- Layer metadata modal -->
-    <div id="layer-metadata-modal" class="modal notOnMobile">
-      <!-- Content -->
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <p style="text-align: left;"><b>Nom de la couche : </b><span class="layer-metadata-name"></span></p>
-        <p style="text-align: left;"><b>Lien vers la source : </b><br><span class="layer-metadata-url"></span></p>
+      <!-- Layer metadata modal -->
+      <div id="layer-metadata-modal" class="modal notOnMobile">
+        <!-- Content -->
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <p style="text-align: left;"><b>Nom de la couche : </b><span class="layer-metadata-name"></span></p>
+          <p style="text-align: left;"><b>Lien vers la source : </b><br><span class="layer-metadata-url"></span></p>
+        </div>
       </div>
-    </div>
 
       <!-- Button to toggle menu on medium screen -->
       <div class="navButton notOnLarge notOnMobile">
