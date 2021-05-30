@@ -78,6 +78,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
   <!-- Project stylesheet -->
   <link rel="stylesheet" href="styles/styles.css?v=1.1">
   <link rel="stylesheet" href="styles/override.css?v=1.1">
+  <link rel="stylesheet" href="styles/temp.css?v=1.1"> <!-- Temporary styles for hiding unready elements -->
 
 </head>
 
