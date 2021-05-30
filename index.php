@@ -26,7 +26,7 @@
             <div class="container">
                 
                 <div class="logo">
-                <?php echo '<img src="images/assets/logos/'.$horizontal_logo.'" title="logo" alt="logo" />'; ?>
+                <?php echo '<img src="map/images/assets/logos/'.$horizontal_logo.'" title="logo" alt="logo" />'; ?>
                 </div>
 
                 <div class="text">
