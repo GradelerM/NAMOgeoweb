@@ -281,7 +281,6 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           <li><a href="administration.php" target="_blank" id="administration-link" class="" <?php echo $show_when_admin_logged;?>>Administration</a></li>
         </ul>
       </div>
-    </div>
 
       <!-- "Accueil" modal -->
       <div id="accueil-modal" class="modal notOnMobile">
