@@ -7,8 +7,8 @@
 // ====================================================================================
 // Project name and logos
 $project_name='Rivage';
-$vertical_logo='verticalLogo.png';
-$horizontal_logo='horizontalLogo.png';
+$vertical_logo='verticalNAMO.png';
+$horizontal_logo='horizontalNAMO.png';
 
 // Noreply mail origin (can keep default)
 $noreply_mail='noreply@namo'.$project_name.'.com';

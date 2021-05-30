@@ -119,7 +119,8 @@ if (isset($_SESSION['user']) && $_SESSION['admin'] == true) {
         <div class="container-storytool">
             <!-- Header -->
             <div class="header">
-                <a href="#" id="back-to-map"><img src="images/assets/logos/logoHorizontal.png"/></a> <!-- HORIZONTAL LOGO -->
+                <!-- HORIZONTAL LOGO -->
+                <?php echo '<a href="#" id="back-to-map"><img src="images/assets/logos/'.$horizontal_logo.'"/></a>';?>
                 <div id="header-navlinks">
                     <ul>
                         <!-- WIKI LINK -->

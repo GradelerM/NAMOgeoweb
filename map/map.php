@@ -183,13 +183,13 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
 
     <!-- Hide the screen while the app is loading -->
     <div id="loadingscreen" class="loading-screen"> <!-- HORIZONTAL LOGO -->
-      <img src="images/assets/logos/logoHorizontal.png" width="200" title="logo" alt="logo" />
+      <?php echo '<img src="images/assets/logos/'.$horizontal_logo.'" width="200" title="logo" alt="logo" />'; ?>
       <div class="loader"></div>
     </div>
 
     <!-- Tools navigation bar (left) -->
     <div class="navbar notOnMobile"> <!-- VERTICAL LOGO -->
-      <a href="#" id="logo" class="notOnMobile accueil-link"><img src="images/assets/logos/logoVertical.png" width="56" title="logo" alt="logo" /></a>
+      <?php echo '<a href="#" id="logo" class="notOnMobile accueil-link"><img src="images/assets/logos/'.$vertical_logo.'" width="56" title="logo" alt="logo" /></a>'; ?>
       <ul class="hide-scrollbar notOnMobile">
 
         <!-- ROI -->
@@ -474,7 +474,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
 
     <!-- Button to toggle menu on small screen (and small logo) -->
     <div class="navButton headerXS"> <!-- HORIZONTAL LOGO -->
-      <a href="#" id="logoXS"><img src="images/assets/logos/logoHorizontal.png" height="28px"/></a>
+      <?php echo '<a href="#" id="logoXS"><img src="images/assets/logos/'.$horizontal_logo.'" height="28px"/></a>'; ?>
       <!-- Burger menu dropdown in case it's needed for a mobile version -->
       <!-- <button id="small-nav-button"><svg class="menu-burger-icon"><use xlink:href="#iconeMenu" /></svg></button> -->
       <div id="mobile-back-to-menu"><a href="#" class="accueil-link">Accueil</a></div>

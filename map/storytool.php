@@ -373,7 +373,7 @@ if (!isset($_SESSION['user'])) {
             <!-- Header -->
             <div class="header">
                 <!-- HORIZONTAL LOGO -->
-                <a href="#" id="back-to-map"><img src="images/assets/logos/logoHorizontal.png"/></a>
+                <?php echo '<a href="#" id="back-to-map"><img src="images/assets/logos/'.$horizontal_logo.'"/></a>'; ?>
                 <div id="header-navlinks">
                     <ul>
                         <!-- WIKI LINK -->
