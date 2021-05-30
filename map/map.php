@@ -597,7 +597,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
       <div class="tab-content">
        
         <!-- Insert your "tab-box" div here -->
-        <?php include("./regions_of_interest.php") ?>
+        <?php include("./regions_of_interest.html"); ?>
 
       </div>
     </div>
