@@ -304,10 +304,12 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <!-- Content -->
         <div class="modal-content">
           <span class="close-modal">&times;</span>
+          <h4>Bienvenue dans l'atlas interactif NAMO GeoWeb du projet <?php echo $project_name;?></h4>
           <div class="scrollable">
-            <h4>Bienvenue dans l'atlas interactif NAMO GeoWeb du projet <?php echo $project_name;?></h4>
+
             <!-- Append modal content -->
-            <?php include("./components/map_apropos_modal.php") ?>
+            <?php include("./components/about.html") ?>
+
           </div>
         </div>
       </div>
@@ -593,24 +595,10 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <svg id="arrow-ZoneEtude" class="tab-arrow"><use xlink:href="#iconeArrow" /></svg>
       </div>
       <div class="tab-content">
-
-        <!-- empriseWorld thumbnail -->
-        <div class="tab-box">
-          <div class="box-title">
-            <p>Guadeloupe</p>
-            <a href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
-          </div>
-          <a id="empriseWorld-zoom" class="emprise" href="#">
-            <div class="emprise-thumbnail">
-              <img src="images/assets/thumbnails/empriseWorld_thumbnail.png" />
-            </div>
-            <div class="emprise-thumbnail-banner">
-              <p>Cliquez pour zoomer</p>
-            </div>
-          </a>
-        </div>
-        
+       
         <!-- Insert your "tab-box" div here -->
+        <?php include("./regions_of_interest.php") ?>
+
       </div>
     </div>
 

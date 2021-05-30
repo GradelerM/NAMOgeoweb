@@ -5,7 +5,7 @@ Initializing the map and popups
 */
 var mainView = new ol.View({
     center: ol.proj.fromLonLat([-17.2,43.6]),
-    zoom: 2,
+    zoom: 1,
     minZoom: 0,
     maxZoom: 20,
 });
@@ -28,8 +28,6 @@ Emprises
 // [ol.proj.fromLonLat([lon, lat]), zoom]
 // lon and lat in EPSG:4326 (WGS84, NOT web-mercator)
 // zoom is the desired zoom level
-
-var empriseWorld = [ol.proj.fromLonLat([-17.2,43.6]), 2];
 
 // Insert your new emprise bounds here
 
