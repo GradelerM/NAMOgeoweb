@@ -1,14 +1,3 @@
-<?php
-session_start() ;
-
-include_once 'config.php';  // charge les différentes variables nécessaires pour les scripts php
-
-header("Content-Type: text/html ; charset=utf-8");
-header("Cache-Control: no-cache , private");//anti Cache pour HTTP/1.1
-header("Pragma: no-cache");//anti Cache pour HTTP/1.0
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -37,7 +26,7 @@ header("Pragma: no-cache");//anti Cache pour HTTP/1.0
             <div class="container">
                 
                 <div class="logo">
-                <?php echo '<img src="map/images/assets/logos/'.$horizontal_logo.'" title="logo" alt="logo" />'; ?>
+                <img src="./logos/horizontalNAMO.svg" title="logo" alt="logo" />
                 </div>
 
                 <div class="text">
@@ -48,7 +37,6 @@ header("Pragma: no-cache");//anti Cache pour HTTP/1.0
                         à explorer la carte, cliquez sur le bouton ci-dessous.
                     </p>
                     <p>Bonne exploration !</p>
-                    <?php echo $horizontal_logo; ?>
                 </div>
 
                 <div class="button">
