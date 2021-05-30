@@ -703,6 +703,13 @@ Header content
   width: 140px;
 }
 
+.modal-content .scrollable {
+  max-height: 88%;
+  font-size: 12px;
+  text-align: left;
+  overflow-y: auto;
+}
+
 label[for=signup_motivations] {
   margin-top: 8px;
   width: 100%;

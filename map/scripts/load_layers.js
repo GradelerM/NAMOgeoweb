@@ -16,15 +16,6 @@ var LignesFlechesInfluences_WMS = new ol.source.ImageWMS({
     widgets: 'opacity legend'
   });
 
-/*
-
-TODO :
-- [] add a loader in the "couches" panel for when the app is loading
-- [] only add the layers from the database when the application is ready (check with jquery)
-
-*/
-
-// Loader: $('#tab-Couches-content .loader-container')
 
 // Function to add the layers to the map
 function addingLayers(e) {
@@ -35,9 +26,6 @@ function addingLayers(e) {
     }
 
 };
-
-// TODO: call addingLayers once everything else is ready
-// addingLayers(layerGroups);
 
 // Function to load the layers from the database when the application starts
 function fetchPublishedLayersFromDB() {

@@ -277,7 +277,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           <li><a href="#" class="accueil-link">Accueil</a></li>
           <li><a href="#" id="apropos-link">A propos</a></li>
           <li><a href="#" id="aide-link" class="">Aide</a></li>
-          <li><a href="storytool_intro.html" target="_blank" id="contribuer-link" class="" <?php echo $show_when_logged;?>>Contribuer</a></li>
+          <li><a href="storytool.php" target="_blank" id="contribuer-link" class="" <?php echo $show_when_logged;?>>Contribuer</a></li>
           <li><a href="administration.php" target="_blank" id="administration-link" class="" <?php echo $show_when_admin_logged;?>>Administration</a></li>
         </ul>
       </div>
@@ -304,10 +304,11 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <!-- Content -->
         <div class="modal-content">
           <span class="close-modal">&times;</span>
-
-          <!-- Append modal content -->
-          <?php include("./components/map_apropos_modal.php") ?>
-
+          <div class="scrollable">
+            <h4>Bienvenue dans l'atlas interactif NAMO GeoWeb du projet <?php echo $project_name;?></h4>
+            <!-- Append modal content -->
+            <?php include("./components/map_apropos_modal.php") ?>
+          </div>
         </div>
       </div>
 
@@ -592,75 +593,16 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
         <svg id="arrow-ZoneEtude" class="tab-arrow"><use xlink:href="#iconeArrow" /></svg>
       </div>
       <div class="tab-content">
-        <!-- empriseGuadeloupe thumbnail -->
+
+        <!-- empriseWorld thumbnail -->
         <div class="tab-box">
           <div class="box-title">
             <p>Guadeloupe</p>
             <a href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
           </div>
-          <a id="empriseGuadeloupe-zoom" class="emprise" href="#">
+          <a id="empriseWorld-zoom" class="emprise" href="#">
             <div class="emprise-thumbnail">
-              <img src="images/assets/thumbnails/empriseGuadeloupe_thumbnail.png" />
-            </div>
-            <div class="emprise-thumbnail-banner">
-              <p>Cliquez pour zoomer</p>
-            </div>
-          </a>
-        </div>
-        <!-- empriseBasseTerre thumbnail -->
-        <div class="tab-box">
-          <div class="box-title">
-            <p>Guadeloupe - Basse-Terre</p>
-            <a href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
-          </div>
-          <a id="empriseBasseTerre-zoom" class="emprise" href="#">
-            <div class="emprise-thumbnail">
-              <img src="images/assets/thumbnails/empriseBasseTerre_thumbnail.png" />
-            </div>
-            <div class="emprise-thumbnail-banner">
-              <p>Cliquez pour zoomer</p>
-            </div>
-          </a>
-        </div>
-        <!-- empriseBasseTerreSud thumbnail -->
-        <div class="tab-box">
-          <div class="box-title">
-            <p>Guadeloupe - Sud de Basse-Terre</p>
-            <a href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
-          </div>
-          <a id="empriseBasseTerreSud-zoom" class="emprise" href="#">
-            <div class="emprise-thumbnail">
-              <img src="images/assets/thumbnails/empriseBasseTerreSud_thumbnail.png" />
-            </div>
-            <div class="emprise-thumbnail-banner">
-              <p>Cliquez pour zoomer</p>
-            </div>
-          </a>
-        </div>
-        <!-- empriseGrandeTerre thumbnail -->
-        <div class="tab-box">
-          <div class="box-title">
-            <p>Guadeloupe - Grande-Terre</p>
-            <a href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
-          </div>
-          <a id="empriseGrandeTerre-zoom" class="emprise" href="#">
-            <div class="emprise-thumbnail">
-              <img src="images/assets/thumbnails/empriseGrandeTerre_thumbnail.png" />
-            </div>
-            <div class="emprise-thumbnail-banner">
-              <p>Cliquez pour zoomer</p>
-            </div>
-          </a>
-        </div>
-        <!-- empriseMarieGalante thumbnail -->
-        <div class="tab-box">
-          <div class="box-title">
-            <p>Guadeloupe - Marie-Galante</p>
-            <a href="#"><svg class="info-link"><use xlink:href="#iconeInfo" /></use></svg></a>
-          </div>
-          <a id="empriseMarieGalante-zoom" class="emprise" href="#">
-            <div class="emprise-thumbnail">
-              <img src="images/assets/thumbnails/empriseMarieGalante_thumbnail.png" />
+              <img src="images/assets/thumbnails/empriseWorld_thumbnail.png" />
             </div>
             <div class="emprise-thumbnail-banner">
               <p>Cliquez pour zoomer</p>
@@ -668,7 +610,6 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
           </a>
         </div>
         
-
         <!-- Insert your "tab-box" div here -->
       </div>
     </div>
