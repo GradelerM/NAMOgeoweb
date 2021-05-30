@@ -1,3 +1,14 @@
+<?php
+session_start() ;
+
+include_once 'config.php';  // charge les différentes variables nécessaires pour les scripts php
+
+header("Content-Type: text/html ; charset=utf-8");
+header("Cache-Control: no-cache , private");//anti Cache pour HTTP/1.1
+header("Pragma: no-cache");//anti Cache pour HTTP/1.0
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
