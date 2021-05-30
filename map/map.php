@@ -951,10 +951,7 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
   <script src="scripts/load_layers.js"></script> <!-- Loading layers in "Couches" -->
   <script src="scripts/storymaps_templates.js"></script> <!-- Nedded to display the storymaps -->
   <script src="scripts/load_stories.js"></script> <!-- Loading stories in "Carte narrative" (storytool version) -->
-  <script src="scripts/choixAnnee.js"></script>
   <script src="scripts/legendLevel.js"></script>
-  <script src="scripts/topoResearch.js"></script>
-  <script src="scripts/wfsrequests.js"></script>
 
   <!-- Menu and forms interactivity -->
   <script src="scripts/dropdownsMenus.js"></script>
