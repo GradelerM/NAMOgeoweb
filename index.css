@@ -3,21 +3,7 @@
 Variables
 ===============================================================================
 */
-:root {
-    --main-padding: 40px 80px;
-    --mobile-padding: 20px 8px;
-
-    --cta : #e00e73;
-    --cta-hover: #A70050;
-
-    --green: #32A329;
-    --magenta: #E00E73;
-    --orange: #FA9C0E;
-    --red: #E42849;
-    --purple: #852E9B;
-    --blue: #0582A9;
-    --black: #0B170B;
-}
+@import "./map/styles/palette.css";
 
 /*
 ===============================================================================
@@ -26,6 +12,7 @@ Main styles
 */
 body {
     max-width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
@@ -33,219 +20,68 @@ body {
     color: var(--black);
 }
 
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-h1:before {
-    content: "";
-    width: 20px;
-    height: 60px;
-    background: var(--magenta);
-    display: block;
-    float: left;
-    margin-top: -18px;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 20px;
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: #F7FBFC;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100vh auto auto auto auto auto;
-    grid-template-areas: 
-        "header             header"
-        "presentation-txt   presentation-img"
-        "content1-img       content1-txt"
-        "content2-txt       content2-img"
-        "go-to-map          go-to-map"
-        "footer             footer";
-}
+    grid-column: 2/3;
+    grid-row: 2/2;
 
-#header {
-    grid-area: header;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    padding: var(--main-padding);
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0)),
-         url("./landingpage/header-background.jpg");
 
-    background-attachment: fixed, fixed;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    background-size: cover, cover;
+    padding: 10% 10%;
+    background-color: #FFFFFF;
+    border: 2.5px solid #C0D7DE;
 }
 
-#header-info {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: 
-        "logo"
-        "caption"
-        "button";
-    max-width: 40%;
-}
-
-#header-info > img {
-    max-width: 8 0%;
-    margin: auto;
-    grid-area: logo;
-}
-
-#header-info > p {
-    margin: 44px 0 44px 20px;
-    grid-area: caption;
-}
-
-#header-info > .a-button {
-    grid-area: button;
-    display: flex;
-    justify-content: center;
-}
-
-.cta {
-    padding: 12px 32px;
+.mainButton {
+    border: none;
+    margin: 0 5px;
+    padding: 12px 18px;
+    min-height: 28px;
+    min-width: 80px;
+  
+    text-align: center;
     text-decoration: none;
+
+    cursor: pointer;
+  
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+  
+    display: inline-block;
+}
+
+.positivebtn {
     color: #fff;
-    background-color: var(--cta);
+    background-color: var(--positive);
+    transition: 0.2s;
+}
+  
+  .positivebtn:hover {
+    background-color: var(--positive-hover);
 }
 
-.cta:hover {
-    color: #fff;
-    background-color: var(--cta-hover);
+.logo {
+    width: 240px;
 }
 
-#presentation-txt {
-    grid-area: presentation-txt;
-    padding: var(--main-padding);
+.logo > img {
+    width: 100%;
 }
 
-#presentation-txt > h1:before {
-    background: var(--magenta);
-}
-
-#presentation-img {
-    grid-area: presentation-img;
-    padding: var(--main-padding);
-}
-
-#content1-txt {
-    grid-area: content1-txt;
-    padding: var(--main-padding);
-}
-
-#content1-txt > h1:before {
-    background: var(--orange);
-}
-
-#content1-img {
-    grid-area: content1-img;
-    padding: var(--main-padding);
-}
-
-#content2-txt {
-    grid-area: content2-txt;
-    padding: var(--main-padding);
-}
-
-#content2-txt > h1:before {
-    background: var(--blue);
-}
-
-#content2-img {
-    grid-area: content2-img;
-    padding: var(--main-padding);
-}
-
-#go-to-map {
-    grid-area: go-to-map;
-    padding: var(--main-padding);
-    padding-bottom: 80px;
-    display: flex;
-    justify-content: center;
-}
-
-footer {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8)50%, rgba(50, 163, 41, 0.8)), 
-        url("./landingpage/header-background.jpg");
-    background-attachment: fixed, fixed;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    background-size: cover, cover;
-
-    grid-area: footer;
-    padding: var(--main-padding);
-    display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-        "gitlab liens contact";
-}
-
-footer hr {
-    margin-right: 40px;
-    border-top: 1px solid;
-    border-color: var(--black);
-}
-
-#hr-gitlab {
-    display: none;
-}
-
-#hr-info {
- display: none;
-}
-
-footer h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-}
-
-footer p {
-    margin: 0.5em 0;
-    font-size: 0.9em;
-}
-
-footer a {
-    font-size: 0.9em;
-    color: var(--cta-hover);
-}
-
-footer a:hover {
-    color: var(--cta-hover);
-}
-
-#link-gitlab {
-    grid-area: gitlab;
-}
-
-#link-gitlab > div {
-    display: flex;
-    align-items: center;
-}
-
-#link-gitlab img {
-    margin-right: 8px;
-}
-
-.reflink {
-    padding-left: 
-}
-
-#links-info {
-    grid-area: liens;
-}
-
-#contact-info {
-    grid-area: contact;
+.text {
+    text-align: center;
+    margin: 5%;
 }
 
 /*
@@ -254,130 +90,11 @@ Media queries
 ===============================================================================
 */
 
-@media only screen and (max-width: 1150px) {
-
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 100vh auto auto auto auto auto auto auto;
-        grid-template-areas: 
-            "header"
-            "presentation-txt"
-            "presentation-img"
-            "content1-txt"
-            "content1-img"
-            "content2-txt"
-            "content2-img"
-            "go-to-map"
-            "footer";
-    }
-
-    footer {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: 
-            "gitlab     contact"
-            "liens      contact";
-    }
-
-    #hr-gitlab {
-        display: block;
-    }
-
-}
-
 @media only screen and (max-width: 688px) {
     
-    body {
-        font-size: 0.8em;
-    }
-
-    h1 {
-        font-size: 18px;
-    }
-
-    h1:before {
-        width: 10px;
-        height: 40px;
-        margin-top: -10px;
-        margin-right: 10px;
-    }
-
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 60vh auto auto auto auto auto auto auto;
-        grid-template-areas: 
-            "header"
-            "presentation-txt"
-            "presentation-img"
-            "content1-txt"
-            "content1-img"
-            "content2-txt"
-            "content2-img"
-            "go-to-map"
-            "footer";
-    }
-
-    #header {
-        padding: var(--mobile-padding);
-        background-image: linear-gradient(360deg, rgba(255, 255, 255, 1)30%, rgba(255, 255, 255, 0.3)), 
-        url("./landingpage/header-background.jpg");
-        background-attachment: scroll, scroll;
-    }
-
-    #header-info {
-         max-width: 100%;
-    }
-    
-    #header-info > img {
-        max-height: 80px;
-        margin: auto;
-    }
-
-    #presentation-txt {
-        padding: var(--mobile-padding);
-    }
-
-    #presentation-img {
-        padding: var(--mobile-padding);
-    }
-
-    #content1-txt {
-        padding: var(--mobile-padding);
-    }
-
-    #content1-img {
-        padding: var(--mobile-padding);
-    }
-
-    #content2-txt {
-        padding: var(--mobile-padding);
-    }
-
-    #content2-img {
-        padding: var(--mobile-padding);
-    }
-
-    #go-to-map {
-        padding: var(--mobile-padding);
-        padding-bottom: 40px;
-    }
-
-    footer {
-        padding: var(--mobile-padding);
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-            "gitlab"
-            "liens"
-            "contact";
-    }
-
-    #hr-gitlab {
-        display: block;
-    }
-
-    #hr-info {
-        display: block;
+    .wrapper {
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template-rows: 1fr 12fr 1fr;
     }
 
 }
