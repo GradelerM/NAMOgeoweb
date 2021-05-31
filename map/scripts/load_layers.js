@@ -1,21 +1,4 @@
-// Functions to load the layers from the database when the map loads
-
-var LignesFlechesInfluences_WMS = new ol.source.ImageWMS({
-    url: 'https://it-amazonia.dev:8090/index.php/lizmap/service/?repository=namotest&project=Carte&VERSION=1.3.0',
-    params: {'LAYERS': 'Influencedelagriculturemoderne', 'TILED':true},
-    serverType: 'geoserver'
-  });
-  var LignesFlechesInfluences = new ol.layer.Image({
-    source: LignesFlechesInfluences_WMS,
-    visible: false,
-    opacity: 1,
-    zIndex: 1050,
-    id: 'LignesFlechesInfluences',
-    theme: 'Autres',
-    title: 'Circuit de la diffusion',
-    widgets: 'opacity legend'
-  });
-
+// Functions to load the layers from the database when the map loads:
 
 // Function to add the layers to the map
 function addingLayers(e) {

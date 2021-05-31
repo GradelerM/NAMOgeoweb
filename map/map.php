@@ -502,11 +502,6 @@ $loader = '<div class="loader-container"><div class="loader"></div></div>';
       <div id="map" class="map"></div>
     </div>
 
-    <!-- pop_ancienne_occitanie tooltip div -->
-    <div id="pop-tooltip" class="ol-pop-tooltip notOnMobile">
-      <div id="pop-tooltip-content" class="ol-pop-tooltip-content">Content</div>
-    </div>
-
     <!-- popup div -->
     <div id="popup" class="ol-popup notOnMobile">
       <a href="#" id="popup-closer" class="ol-popup-closer"></a>

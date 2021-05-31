@@ -378,7 +378,6 @@ if (!isset($_SESSION['user'])) {
                     <ul>
                         <!-- WIKI LINK -->
                         <li><a href="<?php echo $wiki_link; ?>" target="_blank">Documentation</a></li>
-                        <li><a href="#" target="_blank">Aide</a></li>
                     </ul>
                 </div>
             </div>

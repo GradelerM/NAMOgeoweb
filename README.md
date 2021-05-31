@@ -27,7 +27,6 @@ L'application web cartographique RestEAUr'Lag est construite de la manière suiv
 - [Debian 10 (buster)](https://www.debian.org/releases/buster/)
 - [PostgreSQL](https://www.postgresql.org/) 11.9
 - [PostGIS](https://postgis.net/) 2.5
-- [GeoServer](http://geoserver.org/) 2.16.4 - installé dans [Tomcat](https://tomcat.apache.org/) 9.0.31
 - [Apache](https://httpd.apache.org/) 2.4
 - [PHP](https://www.php.net/) 7.4
 
@@ -39,6 +38,5 @@ L'application web cartographique RestEAUr'Lag est construite de la manière suiv
 - [jQuery UI](https://jqueryui.com/) 1.12.1
 - [jQuery-csv](https://github.com/typeiii/jquery-csv) 1.0.11
 - [Remarkable](https://github.com/jonschlinkert/remarkable) 2.0.1
-- [Papa Parse](https://www.papaparse.com/) 5.0
 - [D3](https://d3js.org/) 6.3.1
 - [DataTables](https://datatables.net/) 1.10.24
