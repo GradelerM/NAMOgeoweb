@@ -32,9 +32,6 @@ function writeStoryMap(map, source, book_id) {
         success: function(response) {
 
             // Do something if this is a success
-            console.log('response from api');
-            console.log(response);
-
             if (response.success == true) {
 
                 // Empty the story div
@@ -85,13 +82,8 @@ function writeStoryMap(map, source, book_id) {
                         var basemap     = chapter.map.basemap;
                         var layers      = chapter.map.layers;
 
-                        console.log('Layers for this chapter');
-                        console.log(layers);
-
                         if (layers) {
-                            console.log('Layers == true');
                             var layers  = chapter.map.layers.split(',');
-                            console.log(layers);
                         }
                         var latitude    = chapter.map.latitude;
                         var longitude   = chapter.map.longitude;
