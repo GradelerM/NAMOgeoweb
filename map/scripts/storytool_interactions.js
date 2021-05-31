@@ -2679,10 +2679,17 @@ function displayUpdateLegends(resolution) {
 /*================================================================*/
 // Display the requested layers
 function changeLayers(layers) {
+
+    console.log('Changing the layers');
+
     // Hide all the layers
     for (let i = 0; i < allStoryLayers.length; i++) {
         var layer = window[allStoryLayers[i]];
         var layerId = layer.get('id');
+
+        console.log('Hiding layer' + layerId);
+        console.log(layer);
+        
         // Hide the layer
         layer.setVisible(false);         
         // Hide the legend
@@ -2693,6 +2700,10 @@ function changeLayers(layers) {
     // Add the requested layers
     for (let j = 0; j < layers.length; j++) {
         var layer = window[layers[j]];
+
+        console.log('Adding layer ' + layer.get('id'));
+        console.log(layer);
+
         if (layer) {
             var layerId = layer.get('id');
             // Show the layer

@@ -82,8 +82,13 @@ function writeStoryMap(map, source, book_id) {
                         // Fetch the needed elements for updating the map's view
                         var basemap     = chapter.map.basemap;
 
+                        console.log('Layers for this chapter');
+                        console.log(layers);
+
                         if (layers) {
+                            console.log('Layers == true');
                             var layers  = chapter.map.layers.split(',');
+                            console.log(layers);
                         }
                         var latitude    = chapter.map.latitude;
                         var longitude   = chapter.map.longitude;
