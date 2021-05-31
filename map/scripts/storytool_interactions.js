@@ -1128,8 +1128,8 @@ execOnLoad = function() { // Wrap everything in it so the applications loads onl
 
             ],
             view: new ol.View({
-                center: ol.proj.fromLonLat([-61.4204, 16.1876]),
-                zoom: 8
+                center: ol.proj.fromLonLat([-17.2,43.6]),
+                zoom: 1
             })
         });
 
