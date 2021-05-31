@@ -1189,9 +1189,6 @@ execOnLoad = function() { // Wrap everything in it so the applications loads onl
                 dataType: 'json',
                 success: function(response) {
 
-                    console.log('Response from api:');
-                    console.log(response);
-
                     // Display the new paragraph in the interface
                     paragraph = readParagraph(response.paragraph);
                     addParagraph(paragraph);

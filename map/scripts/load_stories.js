@@ -32,6 +32,8 @@ function writeStoryMap(map, source, book_id) {
         success: function(response) {
 
             // Do something if this is a success
+            console.log('response from api');
+            console.log(response);
 
             if (response.success == true) {
 
