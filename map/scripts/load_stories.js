@@ -83,6 +83,7 @@ function writeStoryMap(map, source, book_id) {
 
                         // Fetch the needed elements for updating the map's view
                         var basemap     = chapter.map.basemap;
+                        var layers      = chapter.map.layers;
 
                         console.log('Layers for this chapter');
                         console.log(layers);
@@ -158,6 +159,7 @@ function writeStoryMap(map, source, book_id) {
 
                         // Fetch the needed elements for updating the map's view
                         var basemap     = chapter.map.basemap;
+                        var layers      = chapter.map.layers;
 
                         if (layers) {
                             var layers      = chapter.map.layers.split(',');
@@ -176,15 +178,13 @@ function writeStoryMap(map, source, book_id) {
                         // Hide all the layers
                         hideAllLayers();
 
-                        // Edit layers // TODOS
+                        // Edit layers
                         if (layers) {
                             for (let i = 0; i < layers.length; i++) {
                                 var layer = window[layers[i]];
                                 if (layer) {
                                     displayLayer(layers[i]);
                                 }
-
-                                //displayLayer(layers);
                             }
                         }
 
