@@ -40,3 +40,8 @@ L'application web cartographique RestEAUr'Lag est construite de la manière suiv
 - [Remarkable](https://github.com/jonschlinkert/remarkable) 2.0.1
 - [D3](https://d3js.org/) 6.3.1
 - [DataTables](https://datatables.net/) 1.10.24
+
+## Financements
+
+Le développement de la plateforme NAMO GeoWeb et NAMO GeoWeb Docker a été rendu possible par le projet FEDER Rivage porté par un consortium de recherche pluridisciplinaire et des bailleurs institutionnels dont les principaux sont la [Région Guadeloupe](https://www.regionguadeloupe.fr/) et l'Union européenne de par le [fonds Feder en Guadeloupe](https://www.europe-guadeloupe.fr/feder).
+NaMo GeoWeb se base sur une idée origonale de Marie Gradeler et Jean-Pierre Chéry pour le projet RestEAUr'Lag, sur des financements de la Foindation de France.
