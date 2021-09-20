@@ -1456,73 +1456,72 @@ jQuery(document).ready(function(){
                     var capabilities = xml.Capability;
                     var arrayOfLayers = capabilities.Layer.Layer;
 
-                    // Check if we can dig deeper into the response
-                    // If yes, for now, ask the user to use the local GeoServer instance to redirect the flux
-                    var test_capabilities = arrayOfLayers[0].Layer;
-                    
-                    if (test_capabilities) { // We didn't reach the layers since we can go deeper, display an error message
+                    // Creating an empty array to store the layers
+                    var layers = [];
 
-                        // Get current domain url
-                        var current_url = window.location.href;
-
-                        // Write the url leading to the local GeoServer instance
-                        var geoserver_url = current_url.split('/map/')[0] + '/geoserver/';
-
-                        // Display the error in the console
-                        console.error("Couldn't fetch capabilities from source");
-
-                        var message = '<p>NAMO ne peut pas encore lire les Capabilities comprenant des couches imbriquées. Veuillez passer par GeoServer pour rediriger le flux WMS, puis revenir ici pour ajouter les couches redirigées.</p>';
-                        $('#data-source-config-panel .info-error').html(message);
-                        
-                    } else { // We can read the Capabilities
-
-                        // Enable the "Confirmer" button so the user can now save the source
-                        $(".ui-dialog-buttonpane button:contains('Confirmer')").button("enable");
-
-                        // Fill up the table
-                        var table = [];
-                        for (let i = 0; i < arrayOfLayers.length; i++) {
-
-                            var row = [];
-
-                            var layer = arrayOfLayers[i];
-                            
-                            var name = layer.Name;
-                            var title = layer.Title;
-
-                            row.push(name);
-                            row.push(title);
-
-                            table.push(row);
-
-                        }
-
-                        // Check if we want to display a preview for checking or actually fetching the data
-                        if (type == 'test') {
-
-                            // Destroy the table and add a new one
-                            var table_container = '<table id="data-source-preview" class="stripe"></table>';
-                            $('#data-source-preview-container').append(table_container);
-
-                            // Display the preview in the data source config panel modal
-                            $('#data-source-preview').dataTable({
-                                data: table,
-                                searching: false,
-                                "iDisplayLength": 5,
-                                "aLengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
-                                columns: [
-                                    {title: "Name"},
-                                    {title: "Title"}
-                                ]
-                            });
-                            
-                        } else if (type == 'fetch') {
-
-                            // Call another function to check if a layer is published or not and display the table
-                            checkIfLayersArePublished(id, table); // TODOS
-
+                    // Recursive function to find all of the leaf nodes (= the layers we are looking for in the Layer tree)
+                    function getLeafNodes(nodes) {
+                        // Check all of the nodes
+                        for (let i = 0; i < nodes.length; i++) {
+                            // Check if this is a leaf node (it has no Layer children)
+                            if (!nodes[i].Layer || nodes[i].Layer.length ===0) {
+                                // This is a leaf node (= a layer), push the result in the layers array
+                                layers.push(nodes[i]);
+                            } else {
+                                // This is not a leaf node, keep digging
+                                getLeafNodes(nodes[i].Layer);
+                            }   
                         }
                     }
+                    getLeafNodes(arrayOfLayers);
+
+                    // Enable the "Confirmer" button so the user can now save the source
+                    $(".ui-dialog-buttonpane button:contains('Confirmer')").button("enable");
+
+                    // Fill up the table
+                    var table = [];
+                    for (let i = 0; i < layers.length; i++) {
+
+                        var row = [];
+
+                        var layer = layers[i];
+                        
+                        var name = layer.Name;
+                        var title = layer.Title;
+
+                        row.push(name);
+                        row.push(title);
+
+                        table.push(row);
+
+                    }
+
+                    // Check if we want to display a preview for checking or actually fetching the data
+                    if (type == 'test') {
+
+                        // Destroy the table and add a new one
+                        var table_container = '<table id="data-source-preview" class="stripe"></table>';
+                        $('#data-source-preview-container').append(table_container);
+
+                        // Display the preview in the data source config panel modal
+                        $('#data-source-preview').dataTable({
+                            data: table,
+                            searching: false,
+                            "iDisplayLength": 5,
+                            "aLengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                            columns: [
+                                {title: "Name"},
+                                {title: "Title"}
+                            ]
+                        });
+                        
+                    } else if (type == 'fetch') {
+
+                        // Call another function to check if a layer is published or not and display the table
+                        checkIfLayersArePublished(id, table); // TODOS
+
+                    }
+
 
                 } else { // Display error messages 
 
