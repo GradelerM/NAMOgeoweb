@@ -85,10 +85,12 @@
                         $to      = $email_admin;
                         // PROJECT NAME
                         $subject = 'New user on NAMO Geoweb - '.$project_name;
-                        $message = 'Please activate the new user ('.$insert_array['username'].') on NAMO GeoWeb - Projet RIVAGE: https://rivage-guadeloupe.teledetection.fr/map/administration.php';
+                        $message = 'Please activate the new user ('.$insert_array['username'].') on NAMO GeoWeb - '.$project_name.': '.$project_url.'/map/administration.php';
                         $headers = "From: ".$email_noreply."\r\n" .
                         "Reply-To: ".$email_noreply."\r\n" .
-                        'X-Mailer: PHP/' . phpversion();
+                        'X-Mailer: PHP/' . phpversion()."\r\n".
+			'MIME-Version: 1.0' . "\r\n" . 
+			'Content-type: text/plain; charset=UTF-8' . "\r\n";
             
                         if (!mail($to, $subject, $message, $headers)) {
                             $response["success"] = false;
@@ -107,10 +109,12 @@
                     $to      = $insert_array['email'];
                     // PROJECT NAME
                     $subject = 'Inscription sur NAMO Geoweb - '.$project_name;
-                    $message = 'Votre inscription sur NAMO Geoweb - Projet RIVAGE a bien été prise en compte. Vous recevrez un mail à cette adresse dès que votre compte aura été activé par un administrateur de la plateforme.';
+                    $message = 'Votre inscription sur NAMO Geoweb - '.$project_name.' a bien été prise en compte. Vous recevrez un mail à cette adresse dès que votre compte aura été activé par un administrateur de la plateforme.';
                     $headers = "From: ".$email_noreply."\r\n" .
                     "Reply-To: ".$email_noreply."\r\n" .
-                    'X-Mailer: PHP/' . phpversion();
+                    'X-Mailer: PHP/' . phpversion().
+                    'MIME-Version: 1.0' . "\r\n" .
+                    'Content-type: text/plain; charset=UTF-8' . "\r\n";
 
                     if (!mail($to, $subject, $message, $headers)) {
                         $response["success"] = false;

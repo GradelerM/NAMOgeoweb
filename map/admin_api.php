@@ -144,10 +144,12 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
 
         $to      = $email;
         $subject = 'Autorisation NAMO Geoweb - '.$project_name; // PROJECT NAME
-        $message = 'Un administrateur a activé votre compte. Vous pouvez désormais utiliser la plateforme NAMO Geoweb - Projet Rivage accessible à cette adresse : https://rivage-guadeloupe.teledetection.fr/';
+        $message = 'Un administrateur a activé votre compte. Vous pouvez désormais utiliser la plateforme NAMO Geoweb - '.$project_name.' accessible à cette adresse : '.$project_url;
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+        'X-Mailer: PHP/' . phpversion().
+        'MIME-Version: 1.0' . "\r\n" .
+        'Content-type: text/plain; charset=UTF-8' . "\r\n";
 
         if (!mail($to, $subject, $message, $headers)) {
             $response["success"] = false;
@@ -185,10 +187,12 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
 
         $to      = $email;
         $subject = 'Autorisation NAMO Geoweb - '.$project_name; // PROJECT NAME
-        $message = 'Votre demande de création d\'un compte pour accéder aux outils participatifs de la plateforme NAMO Geoweb - Projet RIVAGE a été refusée par un administrateur de la plateforme.';
+        $message = 'Votre demande de création d\'un compte pour accéder aux outils participatifs de la plateforme NAMO Geoweb - '.$project_name.' a été refusée par un administrateur de la plateforme.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+        'X-Mailer: PHP/' . phpversion().
+        'MIME-Version: 1.0' . "\r\n" .
+        'Content-type: text/plain; charset=UTF-8' . "\r\n";
 
         if (!mail($to, $subject, $message, $headers)) {
             $response["success"] = false;
@@ -226,10 +230,12 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
 
         $to      = $email;
         $subject = 'Autorisation NAMO Geoweb - '.$project_name; // PROJECT NAME
-        $message = 'Votre compte sur la plateforme NAMO Geoweb - Projet RIVAGE a été temporairement suspendu par un administrateur.';
+        $message = 'Votre compte sur la plateforme NAMO Geoweb - '.$project_name.' a été temporairement suspendu par un administrateur.';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+        'X-Mailer: PHP/' . phpversion().
+        'MIME-Version: 1.0' . "\r\n" .
+        'Content-type: text/plain; charset=UTF-8' . "\r\n";
 
         if (!mail($to, $subject, $message, $headers)) {
             $response["success"] = false;
@@ -267,10 +273,12 @@ elseif (isset($_SESSION['admin']) and ($_SESSION['admin']== true) and isset($_PO
 
         $to      = $email;
         $subject = 'Rôle NAMO Geoweb - '.$project_name; // PROJECT NAME
-        $message = 'Un administrateur a édité votre rôle sur la plateforme NAMO Geoweb - Projet RIVAGE. Vous êtes désormais ' + $_POST["role"] + '.';
+        $message = 'Un administrateur a édité votre rôle sur la plateforme NAMO Geoweb - '.$project_name.'. Vous êtes désormais "' . $_POST["role"] . '".';
         $headers = "From: ".$email_noreply."\r\n" .
         "Reply-To: ".$email_noreply."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+        'X-Mailer: PHP/' . phpversion().
+        'MIME-Version: 1.0' . "\r\n" .
+        'Content-type: text/plain; charset=UTF-8' . "\r\n";
 
         if (!mail($to, $subject, $message, $headers)) {
             $response["success"] = false;
